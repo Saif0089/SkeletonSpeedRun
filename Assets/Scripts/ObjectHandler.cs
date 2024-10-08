@@ -13,25 +13,22 @@ public class ObjectHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
+    private Vector2 originalPosition;
     private Canvas canvas;
     public RectTransform MyTarget;
-    private bool isConnected;  // Tracks if the object is connected to a target
+    bool isConnected;
     public GameManger gameManger;
-    private Image image;
-    private bool collided; // Tracks collision state with the target
-
-    // Store original size and position for resetting later
-    private Vector2 originalSize;
-    private Vector3 originalPosition;
-    private Vector3 originalScale;
 
     [ContextMenu("Fix")]
     public void FixArabic()
     {
+
         gameObject.name = ArabicFixer.Fix(gameObject.name);
         GetComponent<Text>().text = gameObject.name;
+        // gameManger = FindObjectOfType<GameManger>();
+        // MyName = gameObject.name;
+        // gameObject.name = MyName;
     }
-
     [ContextMenu("AssignMuscle")]
     public void AssignMuscle()
     {
@@ -54,103 +51,65 @@ public class ObjectHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
+        originalPosition = rectTransform.anchoredPosition;
         canvas = GetComponentInParent<Canvas>();
-        image = GetComponent<Image>();
 
-        // Store original size and position on awake
-        originalSize = rectTransform.sizeDelta;
-        originalPosition = rectTransform.localPosition;
-        originalScale = rectTransform.localScale;
     }
 
     // Called when dragging starts
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if (!GameManger.Instance.Started) return;
-
         // Allow the UI element to be dragged by setting blockRaycasts to false
         canvasGroup.blocksRaycasts = false;
-        collided = false; // Reset collided state on drag start
-
-        // Change the size of the object to match the target's size while dragging
-        rectTransform.sizeDelta = MyTarget.sizeDelta;
-        rectTransform.localScale = MyTarget.localScale;
     }
 
     // Called every frame while dragging
     public void OnDrag(PointerEventData eventData)
     {
-        if (!GameManger.Instance.Started) return;
-
+        if (isConnected || !GameManger.Instance.Started)
+        {
+            return;
+        }
         // Update the position of the UI element to follow the mouse
-        rectTransform.position = Input.mousePosition;
-    }
+        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
 
+    }
+    bool collided;
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log(other.gameObject.name);
         if (other.gameObject == MyTarget.gameObject)
         {
-            collided = true; // Set collided to true when entering the target
+            collided = true;
         }
     }
-
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject == MyTarget.gameObject)
         {
-            collided = false; // Reset collided when exiting the target
+            collided = false;
         }
     }
-
     // Called when dragging ends
     public void OnEndDrag(PointerEventData eventData)
     {
-        if (!GameManger.Instance.Started) return;
-
         // Restore the blockRaycasts so other UI elements can interact with it
         canvasGroup.blocksRaycasts = true;
-
-        // Check if the dragged object has collided with the target
+        float distance = Vector3.Distance(rectTransform.transform.position, MyTarget.transform.position);
+        Debug.Log(distance);
         if (collided)
         {
-            SnapToTarget(); // Snap to target position if collided
-            DoAttached();   // Handle attachment logic
-        }
-        else
-        {
-            // Reset the position, size, and scale if not connected to the target
-            rectTransform.localPosition = originalPosition;
-            rectTransform.sizeDelta = originalSize;
-            rectTransform.localScale = originalScale;
-
-            // Reset isConnected to allow dragging again
-            isConnected = false;
+            DoAttached();
         }
     }
-
-    // Snap the position and size of the dragged object to the target position and size
-    private void SnapToTarget()
-    {
-        // Snap the dragged object's position to the target's position and size
-        rectTransform.position = MyTarget.position;
-        rectTransform.sizeDelta = MyTarget.sizeDelta;
-        rectTransform.localScale = MyTarget.localScale;
-
-        canvasGroup.interactable = false;
-        image.enabled = false;
-    }
-
     [ContextMenu("Attach")]
     public void DoAttached()
     {
-        MyTarget.GetComponent<Image>().color = Color.white; // Change the color to indicate connection
-        isConnected = true; // Set isConnected to true to indicate attachment
-        GameManger.Instance.ConnectedObjects += 1; // Increment the connected objects counter
-
-        // Disable BoxCollider2D on both the attached object and the target
-        DisableColliders();
-
-        // Check for game completion conditions
+        // rectTransform.anchoredPosition = MyTarget.anchoredPosition;
+        MyTarget.GetComponent<Image>().color = Color.white;
+        isConnected = true;
+        GameManger.Instance.ConnectedObjects += 1;
+        // transform.parent = transform.parent.transform;
         if (GameManger.Instance.ConnectedObjects == GameManger.Instance.boneManager.Bones.Count && GameManger.Instance.StageNumber == 1)
         {
             GameManger.Instance.FinishGame();
@@ -164,30 +123,27 @@ public class ObjectHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             GameManger.Instance.FinishGame();
         }
     }
-
-    // Method to disable BoxCollider2D components
-    private void DisableColliders()
+    // Optional: Reset the element back to its original position
+    public void ResetPosition()
     {
-        // Disable BoxCollider2D on the attached object
-        var myCollider = GetComponent<BoxCollider2D>();
-        if (myCollider != null)
-        {
-            myCollider.enabled = false;
-        }
+        rectTransform.anchoredPosition = originalPosition;
+    }
+    public GameObject sample;
 
-        // Disable BoxCollider2D on the target object
-        var targetCollider = MyTarget.GetComponent<BoxCollider2D>();
-        if (targetCollider != null)
-        {
-            targetCollider.enabled = false;
-        }
+    [ContextMenu("Do the thing")]
+    public void ChangeToBullet()
+    {
+        GameObject go = Instantiate(sample, transform);
+        go.GetComponent<Text>().text = "•";
+        go.name = gameObject.name;
+        GetComponent<Text>().text.Replace("•", " ");
+        DestroyImmediate(this);
     }
 
     public void RemoveIt()
     {
         transform.GetChild(0).GetComponent<Text>().raycastTarget = false;
     }
-
     public void AddColliders()
     {
         var mycoll = gameObject.AddComponent<BoxCollider2D>();
@@ -199,11 +155,11 @@ public class ObjectHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         coll.isTrigger = true;
         coll.size = MyTarget.sizeDelta;
     }
-
     public void RemoveColls()
     {
         DestroyImmediate(GetComponent<BoxCollider2D>());
         DestroyImmediate(GetComponent<Rigidbody2D>());
+
         DestroyImmediate(MyTarget.GetComponent<BoxCollider2D>());
     }
 }

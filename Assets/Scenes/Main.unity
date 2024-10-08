@@ -198,6 +198,7 @@ GameObject:
   - component: {fileID: 62049478}
   - component: {fileID: 62049481}
   - component: {fileID: 62049480}
+  - component: {fileID: 62049482}
   m_Layer: 5
   m_Name: "Right Patella - \uFEEA\uFED4\uFEBF\uFEAE\uFEDF\u0627"
   m_TagString: Untagged
@@ -351,6 +352,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 15, y: 30}
   m_EdgeRadius: 0
+--- !u!114 &62049482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62049473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc298e9a7507942cdbcaea2be7911770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyName: "Right Patella - \uFEEA\uFED4\uFEBF\uFEAE\uFEDF\u0627"
+  MyTarget: {fileID: 683815490}
+  gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!1 &73799997
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,7 +1560,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &213338710
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1688,6 +1705,7 @@ MonoBehaviour:
   MyName: "Pancreas - \u0633\uFE8E\uFEF3\uFEAE\uFEDC\uFEE8\uFE92"
   MyTarget: {fileID: 1554577385}
   gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!225 &213338716
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1967,7 +1985,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &233423196
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2112,6 +2130,7 @@ MonoBehaviour:
   MyName: "Right Humerus - \uFEAA\uFEC0\uFECC\uFEDF\u0627 \uFEE2\uFEC8\uFECB"
   MyTarget: {fileID: 674210001}
   gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!225 &233423202
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2145,7 +2164,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &236166091
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2180,6 +2199,7 @@ MonoBehaviour:
   MyName: "Left Tibia - \u0628\uFEEE\uFE92\uFEE8\uFEC8\uFEDF\u0627"
   MyTarget: {fileID: 1684756710}
   gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!50 &236166093
 Rigidbody2D:
   serializedVersion: 4
@@ -2562,13 +2582,14 @@ GameObject:
   - component: {fileID: 261520851}
   - component: {fileID: 261520854}
   - component: {fileID: 261520853}
+  - component: {fileID: 261520855}
   m_Layer: 5
   m_Name: "Left Tibia - \u0628\uFEEE\uFE92\uFEE8\uFEC8\uFEDF\u0627"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &261520847
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2586,7 +2607,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 7.396, y: -308.77005}
+  m_AnchoredPosition: {x: 7.396, y: -308.6766}
   m_SizeDelta: {x: 14.792, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &261520849
@@ -2715,6 +2736,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 15, y: 30}
   m_EdgeRadius: 0
+--- !u!114 &261520855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261520846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc298e9a7507942cdbcaea2be7911770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyName: "Left Tibia - \u0628\uFEEE\uFE92\uFEE8\uFEC8\uFEDF\u0627"
+  MyTarget: {fileID: 0}
+  gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!1 &261572306
 GameObject:
   m_ObjectHideFlags: 0
@@ -2736,7 +2773,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &261572307
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2771,6 +2808,7 @@ MonoBehaviour:
   MyName: "Left Trapezius - \u0641\uFEAE\uFEA4\uFEE8\uFEE3 \uFEEA\uFE92\uFEB7"
   MyTarget: {fileID: 297264896}
   gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!50 &261572309
 Rigidbody2D:
   serializedVersion: 4
@@ -2946,6 +2984,7 @@ MonoBehaviour:
   MyName: 
   MyTarget: {fileID: 0}
   gameManger: {fileID: 0}
+  sample: {fileID: 0}
 --- !u!114 &263824065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3139,6 +3178,7 @@ GameObject:
   - component: {fileID: 286352116}
   - component: {fileID: 286352122}
   - component: {fileID: 286352121}
+  - component: {fileID: 286352123}
   m_Layer: 5
   m_Name: "Right Pectoralis Major - \u0649\uFEAE\uFE92\uFEDC\uFEDF\u0627 \uFE94\uFEF3\u0631\uFEAA\uFEBC\uFEDF\u0627"
   m_TagString: Untagged
@@ -3163,7 +3203,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 7.396, y: -128.01373}
+  m_AnchoredPosition: {x: 7.396, y: -217.51337}
   m_SizeDelta: {x: 14.792, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &286352116
@@ -3292,6 +3332,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 15, y: 30}
   m_EdgeRadius: 0
+--- !u!114 &286352123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286352114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc298e9a7507942cdbcaea2be7911770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyName: "Right Pectoralis Major - \u0649\uFEAE\uFE92\uFEDC\uFEDF\u0627 \uFE94\uFEF3\u0631\uFEAA\uFEBC\uFEDF\u0627"
+  MyTarget: {fileID: 753295059}
+  gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!1 &289537264
 GameObject:
   m_ObjectHideFlags: 0
@@ -4101,6 +4157,7 @@ GameObject:
   - component: {fileID: 368305272}
   - component: {fileID: 368305275}
   - component: {fileID: 368305274}
+  - component: {fileID: 368305276}
   m_Layer: 5
   m_Name: "Left Fibula - \uFE94\uFEF4\uFEC8\uFEB8\uFEDF\u0627"
   m_TagString: Untagged
@@ -4254,6 +4311,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 15, y: 30}
   m_EdgeRadius: 0
+--- !u!114 &368305276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368305267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc298e9a7507942cdbcaea2be7911770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyName: "Left Fibula - \uFE94\uFEF4\uFEC8\uFEB8\uFEDF\u0627"
+  MyTarget: {fileID: 565633973}
+  gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!1 &370669636
 GameObject:
   m_ObjectHideFlags: 0
@@ -4275,7 +4348,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &370669637
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4310,6 +4383,7 @@ MonoBehaviour:
   MyName: "Right Sartorius - \u0633\uFEEE\uFEF3\u0631\uFEEE\uFE97\u0631\uFE8E\uFEB3"
   MyTarget: {fileID: 1627780724}
   gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!61 &370669639
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4453,7 +4527,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &371713541
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4488,6 +4562,7 @@ MonoBehaviour:
   MyName: "Right Patella - \uFEEA\uFED4\uFEBF\uFEAE\uFEDF\u0627"
   MyTarget: {fileID: 683815490}
   gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!50 &371713543
 Rigidbody2D:
   serializedVersion: 4
@@ -4624,6 +4699,7 @@ GameObject:
   - component: {fileID: 378602873}
   - component: {fileID: 378602879}
   - component: {fileID: 378602878}
+  - component: {fileID: 378602880}
   m_Layer: 5
   m_Name: "Left Brachioradialis - \uFE94\uFEF3\uFEAA\uFEC0\uFECC\uFEDF\u0627"
   m_TagString: Untagged
@@ -4648,7 +4724,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 7.396, y: -221.02747}
+  m_AnchoredPosition: {x: 7.396, y: -400.02673}
   m_SizeDelta: {x: 14.792, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &378602873
@@ -4777,6 +4853,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 15, y: 30}
   m_EdgeRadius: 0
+--- !u!114 &378602880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378602871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc298e9a7507942cdbcaea2be7911770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyName: "Left Brachioradialis - \uFE94\uFEF3\uFEAA\uFEC0\uFECC\uFEDF\u0627"
+  MyTarget: {fileID: 309110532}
+  gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!1 &384962903
 GameObject:
   m_ObjectHideFlags: 0
@@ -4812,7 +4904,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 80.9, y: -16.900024}
+  m_AnchoredPosition: {x: 88, y: -14.200012}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &384962905
@@ -4890,7 +4982,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &386572792
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4925,6 +5017,7 @@ MonoBehaviour:
   MyName: "Left Latissimus Dorsi - \uFEF2\uFEB3\u0631\u0648\u062F"
   MyTarget: {fileID: 1652376357}
   gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!50 &386572794
 Rigidbody2D:
   serializedVersion: 4
@@ -5108,6 +5201,7 @@ MonoBehaviour:
   MyName: "Leaderboard - \uFEE6\uFEF3\u0631\uFEAA\uFEBC\uFE98\uFEE4\uFEDF\u0627"
   MyTarget: {fileID: 0}
   gameManger: {fileID: 0}
+  sample: {fileID: 0}
 --- !u!114 &389492035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5239,7 +5333,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &426001271
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5275,6 +5369,7 @@ MonoBehaviour:
     \uFEAC\uFEA8\uFED4\uFEDF\u0627 \uFEE2\uFEC8\uFECB"
   MyTarget: {fileID: 1882539298}
   gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!50 &426001273
 Rigidbody2D:
   serializedVersion: 4
@@ -6950,6 +7045,7 @@ GameObject:
   - component: {fileID: 563479393}
   - component: {fileID: 563479392}
   - component: {fileID: 563479391}
+  - component: {fileID: 563479396}
   m_Layer: 5
   m_Name: "Adrenal Gland - \uFE94\uFEF3\uFEAE\uFEC8\uFEDC\uFEDF\u0627 \u0629\uFEAA\uFED0\uFEDF\u0627"
   m_TagString: Untagged
@@ -7103,6 +7199,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 563479389}
   m_CullTransparentMesh: 1
+--- !u!114 &563479396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563479389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc298e9a7507942cdbcaea2be7911770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyName: "Adrenal Gland - \uFE94\uFEF3\uFEAE\uFEC8\uFEDC\uFEDF\u0627 \u0629\uFEAA\uFED0\uFEDF\u0627"
+  MyTarget: {fileID: 103302533}
+  gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!1 &565633972
 GameObject:
   m_ObjectHideFlags: 0
@@ -7342,17 +7454,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Muscles:
-  - {fileID: 723639573}
-  - {fileID: 753295058}
-  - {fileID: 309110531}
-  - {fileID: 1745541075}
-  - {fileID: 984161765}
-  - {fileID: 1652376356}
-  - {fileID: 1627780723}
-  - {fileID: 297264895}
-  - {fileID: 447625831}
-  - {fileID: 1882539297}
-  - {fileID: 545800381}
+  - {fileID: 2017843528}
+  - {fileID: 286352114}
+  - {fileID: 378602871}
+  - {fileID: 1547920496}
+  - {fileID: 919575293}
+  - {fileID: 2101410843}
   OrganImages:
   - {fileID: 566645492}
   disabledColor: {r: 1, g: 1, b: 1, a: 0.12941177}
@@ -7537,6 +7644,7 @@ GameObject:
   - component: {fileID: 578386871}
   - component: {fileID: 578386870}
   - component: {fileID: 578386869}
+  - component: {fileID: 578386874}
   m_Layer: 5
   m_Name: "Pancreas - \u0633\uFE8E\uFEF3\uFEAE\uFEDC\uFEE8\uFE92"
   m_TagString: Untagged
@@ -7561,7 +7669,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 7.396, y: -290.78775}
+  m_AnchoredPosition: {x: 7.396, y: -308.77005}
   m_SizeDelta: {x: 14.792, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!50 &578386869
@@ -7690,6 +7798,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 578386867}
   m_CullTransparentMesh: 1
+--- !u!114 &578386874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578386867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc298e9a7507942cdbcaea2be7911770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyName: "Pancreas - \u0633\uFE8E\uFEF3\uFEAE\uFEDC\uFEE8\uFE92"
+  MyTarget: {fileID: 1554577385}
+  gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!1 &597527749
 GameObject:
   m_ObjectHideFlags: 0
@@ -8402,7 +8526,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &647619741
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8420,7 +8544,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 7.396, y: -407.05493}
+  m_AnchoredPosition: {x: 7.396, y: -433.07507}
   m_SizeDelta: {x: 14.792, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &647619742
@@ -8883,6 +9007,7 @@ MonoBehaviour:
   MyName: "Left Scapula - \uFED2\uFE98\uFEDC\uFEDF\u0627 \u062D\uFEEE\uFEDF"
   MyTarget: {fileID: 1210117090}
   gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!1 &674210000
 GameObject:
   m_ObjectHideFlags: 0
@@ -9342,7 +9467,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &694931342
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9378,6 +9503,7 @@ MonoBehaviour:
     \uFEE6\uFEC4\uFE92\uFEDF\u0627"
   MyTarget: {fileID: 723639574}
   gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!50 &694931344
 Rigidbody2D:
   serializedVersion: 4
@@ -9521,7 +9647,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &699021679
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9666,6 +9792,7 @@ MonoBehaviour:
   MyName: "Thyroid Gland - \uFE94\uFEF4\uFED7\u0631\uFEAA\uFEDF\u0627 \u0629\uFEAA\uFED0\uFEDF\u0627"
   MyTarget: {fileID: 456095283}
   gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!225 &699021685
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -10826,7 +10953,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &802738092
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10861,6 +10988,7 @@ MonoBehaviour:
   MyName: "Right Pectoralis Major - \u0649\uFEAE\uFE92\uFEDC\uFEDF\u0627 \uFE94\uFEF3\u0631\uFEAA\uFEBC\uFEDF\u0627"
   MyTarget: {fileID: 753295059}
   gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!61 &802738094
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10997,6 +11125,7 @@ GameObject:
   - component: {fileID: 817718462}
   - component: {fileID: 817718465}
   - component: {fileID: 817718464}
+  - component: {fileID: 817718466}
   m_Layer: 5
   m_Name: "Right Talus - \u0633\uFEEE\uFEDF\uFE8E\uFE97"
   m_TagString: Untagged
@@ -11021,7 +11150,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 7.396, y: -171.88503}
+  m_AnchoredPosition: {x: 7.396, y: -217.51337}
   m_SizeDelta: {x: 14.792, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &817718460
@@ -11150,6 +11279,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 15, y: 30}
   m_EdgeRadius: 0
+--- !u!114 &817718466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817718457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc298e9a7507942cdbcaea2be7911770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyName: "Right Talus - \u0633\uFEEE\uFEDF\uFE8E\uFE97"
+  MyTarget: {fileID: 249726400}
+  gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!1 &821057782
 GameObject:
   m_ObjectHideFlags: 0
@@ -11334,6 +11479,7 @@ MonoBehaviour:
   MyName: "Left Femur - \uFEAC\uFEA8\uFED4\uFEDF\u0627 \uFEE2\uFEC8\uFECB"
   MyTarget: {fileID: 1670749011}
   gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!1 &854537571
 GameObject:
   m_ObjectHideFlags: 0
@@ -11355,7 +11501,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &854537572
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11373,7 +11519,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 7.396, y: -965.1373}
+  m_AnchoredPosition: {x: 7.396, y: -1008.0723}
   m_SizeDelta: {x: 14.792, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &854537573
@@ -11744,7 +11890,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &903240230
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11762,7 +11908,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 7.396, y: -500.06866}
+  m_AnchoredPosition: {x: 7.396, y: -472.88257}
   m_SizeDelta: {x: 14.792, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &903240231
@@ -11937,6 +12083,7 @@ GameObject:
   - component: {fileID: 919575295}
   - component: {fileID: 919575301}
   - component: {fileID: 919575300}
+  - component: {fileID: 919575302}
   m_Layer: 5
   m_Name: "Right Sartorius - \u0633\uFEEE\uFEF3\u0631\uFEEE\uFE97\u0631\uFE8E\uFEB3"
   m_TagString: Untagged
@@ -11961,7 +12108,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 7.396, y: -593.0824}
+  m_AnchoredPosition: {x: 7.396, y: -765.05347}
   m_SizeDelta: {x: 14.792, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &919575295
@@ -12090,6 +12237,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 15, y: 30}
   m_EdgeRadius: 0
+--- !u!114 &919575302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919575293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc298e9a7507942cdbcaea2be7911770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyName: "Right Sartorius - \u0633\uFEEE\uFEF3\u0631\uFEEE\uFE97\u0631\uFE8E\uFEB3"
+  MyTarget: {fileID: 1627780724}
+  gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!1 &941601827
 GameObject:
   m_ObjectHideFlags: 0
@@ -12450,18 +12613,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7c91989cb12c24c0a94862752739c77d, type: 3}
-    m_FontSize: 11
+    m_FontSize: 15
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 16
+    m_MaxSize: 156
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Adrenal Gland - \uFE94\uFEF3\uFEAE\uFEC8\uFEDC\uFEDF\u0627 \u0629\uFEAA\uFED0\uFEDF\u0627"
+  m_Text: "Adrenal Gland - \n\uFE94\uFEF3\uFEAE\uFEC8\uFEDC\uFEDF\u0627 \u0629\uFEAA\uFED0\uFEDF\u0627"
 --- !u!222 &961616085
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12746,14 +12909,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ObjectHandlers:
-  - {fileID: 1313089162}
-  - {fileID: 1382780797}
-  - {fileID: 371713542}
-  - {fileID: 1646559359}
-  - {fileID: 236166092}
-  - {fileID: 233423201}
-  - {fileID: 1273753399}
-  - {fileID: 1487850741}
+  - {fileID: 368305276}
+  - {fileID: 817718466}
+  - {fileID: 1369214735}
+  - {fileID: 62049482}
+  - {fileID: 974115209}
+  - {fileID: 1667614523}
 --- !u!1 &967890073
 GameObject:
   m_ObjectHideFlags: 0
@@ -12863,6 +13024,7 @@ MonoBehaviour:
   MyName: "Sternum - \uFEBA\uFED8\uFEDF\u0627"
   MyTarget: {fileID: 1774117995}
   gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!1 &970172306
 GameObject:
   m_ObjectHideFlags: 0
@@ -13024,6 +13186,7 @@ GameObject:
   - component: {fileID: 974115202}
   - component: {fileID: 974115208}
   - component: {fileID: 974115207}
+  - component: {fileID: 974115209}
   m_Layer: 5
   m_Name: "Left Calvicle -\u0629\uFEEE\uFED7\uFEAE\uFE98\uFEDF\u0627"
   m_TagString: Untagged
@@ -13048,7 +13211,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 7.396, y: -719.4251}
+  m_AnchoredPosition: {x: 7.396, y: -765.05347}
   m_SizeDelta: {x: 14.792, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &974115202
@@ -13177,6 +13340,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 15, y: 30}
   m_EdgeRadius: 0
+--- !u!114 &974115209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974115200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc298e9a7507942cdbcaea2be7911770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyName: "Left Calvicle -\u0629\uFEEE\uFED7\uFEAE\uFE98\uFEDF\u0627"
+  MyTarget: {fileID: 127973053}
+  gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!1 &984161765
 GameObject:
   m_ObjectHideFlags: 0
@@ -13516,13 +13695,8 @@ MonoBehaviour:
   - {fileID: 802738093}
   - {fileID: 1191597500}
   - {fileID: 2038668458}
-  - {fileID: 1068106773}
-  - {fileID: 386572793}
   - {fileID: 370669638}
   - {fileID: 261572308}
-  - {fileID: 1535166562}
-  - {fileID: 426001272}
-  - {fileID: 1702153712}
 --- !u!1 &1011433431
 GameObject:
   m_ObjectHideFlags: 0
@@ -13676,6 +13850,7 @@ MonoBehaviour:
   MyName: "Start - \u0623\uFEAA\uFE92\uFEF3"
   MyTarget: {fileID: 0}
   gameManger: {fileID: 0}
+  sample: {fileID: 0}
 --- !u!114 &1017630624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14030,7 +14205,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1059920650
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14175,6 +14350,7 @@ MonoBehaviour:
   MyName: "Adrenal Gland - \uFE94\uFEF3\uFEAE\uFEC8\uFEDC\uFEDF\u0627 \u0629\uFEAA\uFED0\uFEDF\u0627"
   MyTarget: {fileID: 103302533}
   gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!225 &1059920656
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -14281,7 +14457,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1068106772
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14316,6 +14492,7 @@ MonoBehaviour:
   MyName: "Left Peroneus Longus -  \u0633\uFEEE\uFEA0\uFEE7\uFEEE\uFEDF \u0633\uFEEE\uFEF4\uFEE7\u0648\uFEAE\uFEF4\uFE91"
   MyTarget: {fileID: 984161766}
   gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!50 &1068106774
 Rigidbody2D:
   serializedVersion: 4
@@ -14700,7 +14877,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1119364174
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14718,7 +14895,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 7.396, y: -872.1236}
+  m_AnchoredPosition: {x: 7.396, y: -886.4383}
   m_SizeDelta: {x: 14.792, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1119364175
@@ -14957,7 +15134,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 71.3, y: -25.726208}
+  m_AnchoredPosition: {x: 82.9, y: -14.7}
   m_SizeDelta: {x: 160, y: 50.8524}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1136712945
@@ -15028,6 +15205,7 @@ GameObject:
   - component: {fileID: 1147657487}
   - component: {fileID: 1147657486}
   - component: {fileID: 1147657485}
+  - component: {fileID: 1147657490}
   m_Layer: 5
   m_Name: "Pituitary Gland - \uFE94\uFEF4\uFEE3\uFE8E\uFEA8\uFEE8\uFEDF\u0627 \u0629\uFEAA\uFED0\uFEDF\u0627"
   m_TagString: Untagged
@@ -15052,7 +15230,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 7.396, y: -546.5755}
+  m_AnchoredPosition: {x: 7.396, y: -582.5401}
   m_SizeDelta: {x: 14.792, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!50 &1147657485
@@ -15181,6 +15359,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1147657483}
   m_CullTransparentMesh: 1
+--- !u!114 &1147657490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147657483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc298e9a7507942cdbcaea2be7911770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyName: "Pituitary Gland - \uFE94\uFEF4\uFEE3\uFE8E\uFEA8\uFEE8\uFEDF\u0627 \u0629\uFEAA\uFED0\uFEDF\u0627"
+  MyTarget: {fileID: 1487453366}
+  gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!1 &1155333211
 GameObject:
   m_ObjectHideFlags: 0
@@ -15541,7 +15735,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1191597499
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15576,6 +15770,7 @@ MonoBehaviour:
   MyName: "Left Brachioradialis - \uFE94\uFEF3\uFEAA\uFEC0\uFECC\uFEDF\u0627"
   MyTarget: {fileID: 309110532}
   gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!50 &1191597501
 Rigidbody2D:
   serializedVersion: 4
@@ -15896,7 +16091,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1273753398
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15931,6 +16126,7 @@ MonoBehaviour:
   MyName: "Left Ulna - \uFEAA\uFEE7\uFEB0\uFEDF\u0627"
   MyTarget: {fileID: 743303348}
   gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!61 &1273753400
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16316,7 +16512,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1304157416
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16334,7 +16530,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 7.396, y: -779.10986}
+  m_AnchoredPosition: {x: 7.396, y: -764.80426}
   m_SizeDelta: {x: 14.792, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1304157417
@@ -16484,7 +16680,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1313089161
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16519,6 +16715,7 @@ MonoBehaviour:
   MyName: "Left Calvicle -\u0629\uFEEE\uFED7\uFEAE\uFE98\uFEDF\u0627"
   MyTarget: {fileID: 127973053}
   gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!50 &1313089163
 Rigidbody2D:
   serializedVersion: 4
@@ -17125,6 +17322,7 @@ GameObject:
   - component: {fileID: 1369214731}
   - component: {fileID: 1369214734}
   - component: {fileID: 1369214733}
+  - component: {fileID: 1369214735}
   m_Layer: 5
   m_Name: "Left Ulna - \uFEAA\uFEE7\uFEB0\uFEDF\u0627"
   m_TagString: Untagged
@@ -17149,7 +17347,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 7.396, y: -445.6551}
+  m_AnchoredPosition: {x: 7.396, y: -400.02673}
   m_SizeDelta: {x: 14.792, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1369214729
@@ -17278,6 +17476,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 15, y: 30}
   m_EdgeRadius: 0
+--- !u!114 &1369214735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369214726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc298e9a7507942cdbcaea2be7911770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyName: "Left Ulna - \uFEAA\uFEE7\uFEB0\uFEDF\u0627"
+  MyTarget: {fileID: 743303348}
+  gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!1 &1382780795
 GameObject:
   m_ObjectHideFlags: 0
@@ -17299,7 +17513,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1382780796
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17334,6 +17548,7 @@ MonoBehaviour:
   MyName: "Right Talus - \u0633\uFEEE\uFEDF\uFE8E\uFE97"
   MyTarget: {fileID: 249726400}
   gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!50 &1382780798
 Rigidbody2D:
   serializedVersion: 4
@@ -18092,7 +18307,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1487850740
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18127,6 +18342,7 @@ MonoBehaviour:
   MyName: "Mandible - \uFEF2\uFEE0\uFED4\uFEB4\uFEDF\u0627 \uFEDA\uFED4\uFEDF\u0627"
   MyTarget: {fileID: 1511694191}
   gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!50 &1487850742
 Rigidbody2D:
   serializedVersion: 4
@@ -18355,14 +18571,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bones:
-  - {fileID: 1646559356}
-  - {fileID: 1382780795}
-  - {fileID: 1684756709}
-  - {fileID: 1273753397}
-  - {fileID: 371713540}
-  - {fileID: 1313089160}
-  - {fileID: 1487850739}
-  - {fileID: 233423195}
+  - {fileID: 368305267}
+  - {fileID: 817718457}
+  - {fileID: 1369214726}
+  - {fileID: 62049473}
+  - {fileID: 974115200}
+  - {fileID: 1667614514}
   SkeletonImages:
   - {fileID: 74158031}
   - {fileID: 80836495}
@@ -18620,7 +18834,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1535166561
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18656,6 +18870,7 @@ MonoBehaviour:
     \uFE94\uFEE0\uFEC0\uFECB"
   MyTarget: {fileID: 447625832}
   gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!50 &1535166563
 Rigidbody2D:
   serializedVersion: 4
@@ -18868,6 +19083,7 @@ GameObject:
   - component: {fileID: 1547920498}
   - component: {fileID: 1547920504}
   - component: {fileID: 1547920503}
+  - component: {fileID: 1547920505}
   m_Layer: 5
   m_Name: "Right Deltoid - \uFE94\uFEF4\uFEDF\u0627\uFEAA\uFEDF\u0627 \uFE94\uFEE0\uFEC0\uFECC\uFEDF\u0627"
   m_TagString: Untagged
@@ -18892,7 +19108,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 7.396, y: -314.0412}
+  m_AnchoredPosition: {x: 7.396, y: -582.5401}
   m_SizeDelta: {x: 14.792, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1547920498
@@ -19021,6 +19237,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 15, y: 30}
   m_EdgeRadius: 0
+--- !u!114 &1547920505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547920496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc298e9a7507942cdbcaea2be7911770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyName: "Right Deltoid - \uFE94\uFEF4\uFEDF\u0627\uFEAA\uFEDF\u0627 \uFE94\uFEE0\uFEC0\uFECC\uFEDF\u0627"
+  MyTarget: {fileID: 1745541076}
+  gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!1 &1554577384
 GameObject:
   m_ObjectHideFlags: 0
@@ -19522,7 +19754,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 90.7, y: -16.900024}
+  m_AnchoredPosition: {x: 87.399994, y: -16.599976}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1626696859
@@ -19563,14 +19795,14 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 16
+    m_MaxSize: 145
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Pituitary Gland - \uFE94\uFEF4\uFEE3\uFE8E\uFEA8\uFEE8\uFEDF\u0627 \u0629\uFEAA\uFED0\uFEDF\u0627"
+  m_Text: "Pituitary Gland - \n\uFE94\uFEF4\uFEE3\uFE8E\uFEA8\uFEE8\uFEDF\u0627 \u0629\uFEAA\uFED0\uFEDF\u0627"
 --- !u!222 &1626696861
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19914,7 +20146,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1646559357
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19976,6 +20208,7 @@ MonoBehaviour:
   MyName: "Left Fibula - \uFE94\uFEF4\uFEC8\uFEB8\uFEDF\u0627"
   MyTarget: {fileID: 565633973}
   gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!61 &1646559360
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20309,6 +20542,7 @@ GameObject:
   - component: {fileID: 1667614516}
   - component: {fileID: 1667614522}
   - component: {fileID: 1667614521}
+  - component: {fileID: 1667614523}
   m_Layer: 5
   m_Name: "Mandible - \uFEF2\uFEE0\uFED4\uFEB4\uFEDF\u0627 \uFEDA\uFED4\uFEDF\u0627"
   m_TagString: Untagged
@@ -20333,7 +20567,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 7.396, y: -856.3101}
+  m_AnchoredPosition: {x: 7.396, y: -947.56683}
   m_SizeDelta: {x: 14.792, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1667614516
@@ -20462,6 +20696,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 15, y: 30}
   m_EdgeRadius: 0
+--- !u!114 &1667614523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667614514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc298e9a7507942cdbcaea2be7911770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyName: "Mandible - \uFEF2\uFEE0\uFED4\uFEB4\uFEDF\u0627 \uFEDA\uFED4\uFEDF\u0627"
+  MyTarget: {fileID: 1511694191}
+  gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!1 &1668476654
 GameObject:
   m_ObjectHideFlags: 0
@@ -21060,6 +21310,7 @@ GameObject:
   - component: {fileID: 1698269547}
   - component: {fileID: 1698269546}
   - component: {fileID: 1698269545}
+  - component: {fileID: 1698269550}
   m_Layer: 5
   m_Name: "Thyroid Gland - \uFE94\uFEF4\uFED7\u0631\uFEAA\uFEDF\u0627 \u0629\uFEAA\uFED0\uFEDF\u0627"
   m_TagString: Untagged
@@ -21084,7 +21335,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 7.396, y: -802.3633}
+  m_AnchoredPosition: {x: 7.396, y: -856.3102}
   m_SizeDelta: {x: 14.792, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!50 &1698269545
@@ -21213,6 +21464,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1698269543}
   m_CullTransparentMesh: 1
+--- !u!114 &1698269550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698269543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc298e9a7507942cdbcaea2be7911770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyName: "Thyroid Gland - \uFE94\uFEF4\uFED7\u0631\uFEAA\uFEDF\u0627 \u0629\uFEAA\uFED0\uFEDF\u0627"
+  MyTarget: {fileID: 456095283}
+  gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!1 &1702153710
 GameObject:
   m_ObjectHideFlags: 0
@@ -21235,7 +21502,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1702153711
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21271,6 +21538,7 @@ MonoBehaviour:
     \u062A\u0627\u0630 \uFE94\uFEE0\uFEC0\uFECC\uFEDF\u0627"
   MyTarget: {fileID: 545800382}
   gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!50 &1702153713
 Rigidbody2D:
   serializedVersion: 4
@@ -22026,13 +22294,14 @@ GameObject:
   - component: {fileID: 1775318149}
   - component: {fileID: 1775318155}
   - component: {fileID: 1775318154}
+  - component: {fileID: 1775318156}
   m_Layer: 5
   m_Name: "Right Humerus - \uFEAA\uFEC0\uFECC\uFEDF\u0627 \uFEE2\uFEC8\uFECB"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1775318148
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22050,7 +22319,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 7.396, y: -993.1951}
+  m_AnchoredPosition: {x: 7.396, y: -973.3197}
   m_SizeDelta: {x: 14.792, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1775318149
@@ -22179,6 +22448,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 15, y: 30}
   m_EdgeRadius: 0
+--- !u!114 &1775318156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775318147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc298e9a7507942cdbcaea2be7911770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyName: "Right Humerus - \uFEAA\uFEC0\uFECC\uFEDF\u0627 \uFEE2\uFEC8\uFECB"
+  MyTarget: {fileID: 0}
+  gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!1 &1789677147
 GameObject:
   m_ObjectHideFlags: 0
@@ -22609,7 +22894,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1821877696
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22754,6 +23039,7 @@ MonoBehaviour:
   MyName: "Pituitary Gland - \uFE94\uFEF4\uFEE3\uFE8E\uFEA8\uFEE8\uFEDF\u0627 \u0629\uFEAA\uFED0\uFEDF\u0627"
   MyTarget: {fileID: 1487453366}
   gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!225 &1821877702
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -23673,6 +23959,7 @@ GameObject:
   - component: {fileID: 2017843530}
   - component: {fileID: 2017843536}
   - component: {fileID: 2017843535}
+  - component: {fileID: 2017843537}
   m_Layer: 5
   m_Name: "Left Rectus Abdominis - \uFE94\uFEE4\uFEF4\uFED8\uFE98\uFEB4\uFEE4\uFEDF\u0627
     \uFEE6\uFEC4\uFE92\uFEDF\u0627"
@@ -23827,6 +24114,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 15, y: 30}
   m_EdgeRadius: 0
+--- !u!114 &2017843537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017843528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc298e9a7507942cdbcaea2be7911770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyName: "Left Rectus Abdominis - \uFE94\uFEE4\uFEF4\uFED8\uFE98\uFEB4\uFEE4\uFEDF\u0627
+    \uFEE6\uFEC4\uFE92\uFEDF\u0627"
+  MyTarget: {fileID: 723639574}
+  gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!1 &2028568048
 GameObject:
   m_ObjectHideFlags: 0
@@ -24107,7 +24411,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2038668457
 RectTransform:
   m_ObjectHideFlags: 0
@@ -24142,6 +24446,7 @@ MonoBehaviour:
   MyName: "Right Deltoid - \uFE94\uFEF4\uFEDF\u0627\uFEAA\uFEDF\u0627 \uFE94\uFEE0\uFEC0\uFECC\uFEDF\u0627"
   MyTarget: {fileID: 1745541076}
   gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!50 &2038668459
 Rigidbody2D:
   serializedVersion: 4
@@ -24697,6 +25002,7 @@ MonoBehaviour:
   MyName: "Left Radius - \uFEAE\uFEC4\uFED8\uFEDF\u0627 \uFED2\uFEBC\uFEE7"
   MyTarget: {fileID: 395022153}
   gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!1 &2101410843
 GameObject:
   m_ObjectHideFlags: 0
@@ -24711,6 +25017,7 @@ GameObject:
   - component: {fileID: 2101410845}
   - component: {fileID: 2101410851}
   - component: {fileID: 2101410850}
+  - component: {fileID: 2101410852}
   m_Layer: 5
   m_Name: "Left Trapezius - \u0641\uFEAE\uFEA4\uFEE8\uFEE3 \uFEEA\uFE92\uFEB7"
   m_TagString: Untagged
@@ -24735,7 +25042,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 7.396, y: -686.0961}
+  m_AnchoredPosition: {x: 7.396, y: -947.56683}
   m_SizeDelta: {x: 14.792, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &2101410845
@@ -24864,6 +25171,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 15, y: 30}
   m_EdgeRadius: 0
+--- !u!114 &2101410852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101410843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc298e9a7507942cdbcaea2be7911770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyName: "Left Trapezius - \u0641\uFEAE\uFEA4\uFEE8\uFEE3 \uFEEA\uFE92\uFEB7"
+  MyTarget: {fileID: 297264896}
+  gameManger: {fileID: 6199435}
+  sample: {fileID: 0}
 --- !u!1 &2101478788
 GameObject:
   m_ObjectHideFlags: 0
