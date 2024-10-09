@@ -43,13 +43,20 @@ public class GameManger : MonoBehaviour
     public Image LoadingScreen;
     public GameObject GameOverPanel;
     public GameObject GameWinPanel;
+    public GameObject GameWinScore;
 
     public GameObject TakeNamePanel;
     public GameObject InputnameError;
     public TMP_InputField PlayerNameText;
 
+    public GameObject demo;
+    public float DemoHideTime = 15;
+    float demotime = 0;
+    bool canplaydemo = true;
     string playername;
     bool nameAssigned=false;
+
+
     private void Awake()
     {
         DOTween.Init();
@@ -85,10 +92,11 @@ public class GameManger : MonoBehaviour
             StartGameButton.targetGraphic.color = Color.red;
             StartGameButton.onClick.RemoveAllListeners();
             StartGameButton.onClick.AddListener(() => StopGame());
+            InputnameError.SetActive(false);
         }
         else
         {
-
+            InputnameError.SetActive(true);
         }
     }
     public void CloseNamePanel()
@@ -101,6 +109,8 @@ public class GameManger : MonoBehaviour
         Leaderboard.SetActive(false);
         StartGameButton.gameObject.SetActive(true);
         Started = false;
+        canplaydemo = true;
+        demotime = 0;
     }
 
     public void StartGame()
@@ -119,13 +129,15 @@ public class GameManger : MonoBehaviour
         }
         else
         {
+            PlayerNameText.text=$"Player{(int)Random.Range(10000,100000)}";
+            InputnameError.SetActive(false);
             StartGameButton.gameObject.SetActive(false);
             TakeNamePanel.SetActive(true);
             StartGameText.SetActive(false);
             bonesSection.SetActive(false);
             Leaderboard.SetActive(false);
             Started = false;
-           
+            canplaydemo = false;
         }
 
     }
@@ -140,6 +152,9 @@ public class GameManger : MonoBehaviour
     }
     private void Update()
     {
+
+
+
         if(Started){
             gametime += Time.deltaTime;
             GameTimeText.text = gametime.ToString("0.0");
@@ -148,6 +163,39 @@ public class GameManger : MonoBehaviour
                 Started = false;
                 GameOver();
             }
+        }
+        else
+        {
+            if(canplaydemo)
+            {
+                if (Input.GetMouseButtonDown(0))
+                {
+                    demotime = 0;
+                    if (demo.activeSelf)
+                        demo.SetActive(false);
+                }
+                else
+                {
+
+
+                    demotime += Time.deltaTime;
+
+                    if (demotime >= DemoHideTime)
+                    {
+                        if (!demo.activeSelf)
+                            demo.SetActive(true);
+                    }
+                }
+            }
+            
+            if(canplaydemo==false)
+            {
+                demotime = 0;
+                if (demo.activeSelf)
+                    demo.SetActive(false);
+            }
+
+            
         }
     }
     public void GameOver()
