@@ -10,6 +10,16 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
+
+[System.Serializable]
+public class  PlayerData
+{
+    public float score;
+    public string name;
+    
+}
+
 public class GameManger : MonoBehaviour
 {
     public static GameManger Instance;
@@ -24,7 +34,7 @@ public class GameManger : MonoBehaviour
     public GameObject muscleSection;
     public float gametime;
     public TMP_Text GameTimeText;
-    public List<float> PlayerScoress = new List<float>();
+    public List<PlayerData> PlayerScoress = new List<PlayerData>();
     public GameObject ScorePrefab;
     public GameObject Leaderboard;
     public Button StartGameButton;
@@ -32,6 +42,14 @@ public class GameManger : MonoBehaviour
     public int StageNumber =1;
     public Image LoadingScreen;
     public GameObject GameOverPanel;
+    public GameObject GameWinPanel;
+
+    public GameObject TakeNamePanel;
+    public GameObject InputnameError;
+    public TMP_InputField PlayerNameText;
+
+    string playername;
+    bool nameAssigned=false;
     private void Awake()
     {
         DOTween.Init();
@@ -43,23 +61,78 @@ public class GameManger : MonoBehaviour
 
         if (!string.IsNullOrEmpty(PlayerPrefs.GetString("ScoreJson")))
         {
-            PlayerScoress = JsonConvert.DeserializeObject<List<float>>(PlayerPrefs.GetString("ScoreJson"));
+            PlayerScoress = JsonConvert.DeserializeObject<List<PlayerData>>(PlayerPrefs.GetString("ScoreJson"));
             PlayerScoress.Sort();
         }
     }
+
+    public void AddName()
+    {
+
+        playername = PlayerNameText.text;
+
+        if (playername.Length > 0 && playername != string.Empty)
+        {
+
+
+            TakeNamePanel.SetActive(false);
+            StartGameText.SetActive(false);
+            bonesSection.SetActive(true);
+            nameAssigned = true;
+            Started = true;
+            StartGameButton.gameObject.SetActive(true);
+            StartGameButtonText.text = "Stop - ﻒﻗ";
+            StartGameButton.targetGraphic.color = Color.red;
+            StartGameButton.onClick.RemoveAllListeners();
+            StartGameButton.onClick.AddListener(() => StopGame());
+        }
+        else
+        {
+
+        }
+    }
+    public void CloseNamePanel()
+    {
+        StopGame();
+
+        TakeNamePanel.SetActive(false);
+        StartGameText.SetActive(true);
+        bonesSection.SetActive(false);
+        Leaderboard.SetActive(false);
+        StartGameButton.gameObject.SetActive(true);
+        Started = false;
+    }
+
     public void StartGame()
     {
-        StartGameText.SetActive(false);
-        bonesSection.SetActive(true);
-        Started = true;
-        StartGameButtonText.text = "Stop - ﻒﻗ";
-        StartGameButton.targetGraphic.color = Color.red;
-        StartGameButton.onClick.RemoveAllListeners();
-        StartGameButton.onClick.AddListener(() => StopGame());
+        if (nameAssigned)
+        {
+            TakeNamePanel.SetActive(false);
+            StartGameText.SetActive(false);
+            bonesSection.SetActive(true);
+            Leaderboard.SetActive(false);
+            Started = true;
+            StartGameButtonText.text = "Stop - ﻒﻗ";
+            StartGameButton.targetGraphic.color = Color.red;
+            StartGameButton.onClick.RemoveAllListeners();
+            StartGameButton.onClick.AddListener(() => StopGame());
+        }
+        else
+        {
+            StartGameButton.gameObject.SetActive(false);
+            TakeNamePanel.SetActive(true);
+            StartGameText.SetActive(false);
+            bonesSection.SetActive(false);
+            Leaderboard.SetActive(false);
+            Started = false;
+           
+        }
+
     }
     public void StopGame()
     {
         Started = false;
+        
         StartGameButtonText.text = "Start - أﺪﺒﻳ";
         StartGameButton.targetGraphic.color = new Color(0.07197545f, 0.8301887f, 0, 1);
         StartGameButton.onClick.RemoveAllListeners();
@@ -72,6 +145,8 @@ public class GameManger : MonoBehaviour
             GameTimeText.text = gametime.ToString("0.0");
             if(gametime>=120){
 
+                Started = false;
+                GameOver();
             }
         }
     }
@@ -88,6 +163,7 @@ public class GameManger : MonoBehaviour
         {
             if (StageNumber == 1)
             {
+                Started = false;
                 boneManager.SkeletonImages.ForEach(x => x.color = new Color(1, 1, 1, 1));
                 ConnectedObjects = 0;
                 LoadingScreen.gameObject.SetActive(true);
@@ -104,6 +180,8 @@ public class GameManger : MonoBehaviour
             }
             if(StageNumber == 2)
             {
+                Started = false;
+
                 organManager.OrganImages.ForEach(x => x.color = new Color(1, 1, 1, 1));
                 ConnectedObjects = 0;
                 LoadingScreen.gameObject.SetActive(true);
@@ -122,7 +200,8 @@ public class GameManger : MonoBehaviour
         }
         else
         {
-                muscleManager.OrganImages.ForEach(x => x.color = new Color(1, 1, 1, 1));
+            Started = false;
+            muscleManager.OrganImages.ForEach(x => x.color = new Color(1, 1, 1, 1));
                 ConnectedObjects = 0;
                 LoadingScreen.gameObject.SetActive(true);
                 await UniTask.Delay(1000, ignoreTimeScale: false);
@@ -133,7 +212,11 @@ public class GameManger : MonoBehaviour
                 LoadingScreen.DOFade(0, 1f);
                 await UniTask.Delay(1000, ignoreTimeScale: false);
                 LoadingScreen.gameObject.SetActive(false);
-            PlayerScoress.Add(gametime);
+          
+            PlayerData data = new PlayerData();
+            data.name = playername;
+            data.score = gametime;
+            PlayerScoress.Add(data);
             PlayerScoress.Sort();
             string json = JsonConvert.SerializeObject(PlayerScoress);
             PlayerPrefs.SetString("ScoreJson", json);
@@ -157,7 +240,8 @@ public class GameManger : MonoBehaviour
                 go.transform.GetChild(0).GetComponent<TMP_Text>().color = Color.gray;
                 go.transform.GetChild(1).GetComponent<TMP_Text>().color = Color.gray;
             }
-            go.transform.GetChild(1).GetComponent<TMP_Text>().text = PlayerScoress[i].ToString("0.0");
+            go.transform.GetChild(0).GetComponent<TMP_Text>().text = PlayerScoress[i].name.ToString();
+            go.transform.GetChild(1).GetComponent<TMP_Text>().text = PlayerScoress[i].score.ToString("0.0");
             InstantiatedScores.Add(go);
         }
         Leaderboard.SetActive(true);
