@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using ArabicSupport;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -19,7 +20,11 @@ public class GeneralUnityActions : MonoBehaviour
     [HideInInspector] public GameObject loadedLoader;
     Vector2 initialPositionoOfContent;
 
-
+    [ContextMenu("Fix Arabic")]
+    public void FixArabic()
+    {
+        GetComponent<Text>().text = ArabicFixer.Fix(GetComponent<Text>().text);
+    }
     private void OnEnable()
     {
 

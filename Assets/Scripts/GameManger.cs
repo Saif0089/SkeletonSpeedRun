@@ -31,6 +31,7 @@ public class GameManger : MonoBehaviour
     public Text StartGameButtonText;
     public int StageNumber =1;
     public Image LoadingScreen;
+    public GameObject GameOverPanel;
     private void Awake()
     {
         DOTween.Init();
@@ -69,9 +70,16 @@ public class GameManger : MonoBehaviour
         if(Started){
             gametime += Time.deltaTime;
             GameTimeText.text = gametime.ToString("0.0");
+            if(gametime>=120){
+
+            }
         }
     }
-    
+    public void GameOver()
+    {
+        StopGame();
+        GameOverPanel.SetActive(true);
+    }
     public async UniTask FinishGame()
     {
         Debug.Log("GameFinish");
