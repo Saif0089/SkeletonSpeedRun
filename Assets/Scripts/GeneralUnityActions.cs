@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using ArabicSupport;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
@@ -24,6 +25,15 @@ public class GeneralUnityActions : MonoBehaviour
     public void FixArabic()
     {
         GetComponent<Text>().text = ArabicFixer.Fix(GetComponent<Text>().text);
+        
+
+    }
+    [ContextMenu("Fix Arabic TMPRO")]
+    public void FixArabicTmpro()
+    {
+        GetComponent<TextMeshProUGUI>().text = ArabicFixer.Fix(GetComponent<TextMeshProUGUI>().text);
+
+
     }
     private void OnEnable()
     {
