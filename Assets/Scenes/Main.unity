@@ -175,6 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: 
   MyTarget: {fileID: 0}
+  othertargets: []
   gameManger: {fileID: 0}
   sample: {fileID: 0}
 --- !u!114 &2327143
@@ -636,6 +637,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Right Patella - \uFEEA\uFED4\uFEBF\uFEAE\uFEDF\u0627"
   MyTarget: {fileID: 683815490}
+  othertargets:
+  - {fileID: 1517973740}
+  - {fileID: 683815490}
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!1 &73799997
@@ -1310,7 +1314,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "  Mandible - \uFEF2\uFEE0\uFED4\uFEB4\uFEDF\u0627 \uFEDA\uFED4\uFEDF\u0627"
+  m_Text: "Mandible - \uFEF2\uFEE0\uFED4\uFEB4\uFEDF\u0627 \uFEDA\uFED4\uFEDF\u0627"
 --- !u!222 &96488324
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1562,6 +1566,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Left Fibula - \uFE94\uFEF4\uFEC8\uFEB8\uFEDF\u0627"
   MyTarget: {fileID: 1938197667}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!61 &103865155
@@ -1680,6 +1685,7 @@ RectTransform:
   - {fileID: 1478731620}
   - {fileID: 674210001}
   - {fileID: 233423196}
+  - {fileID: 1275651888}
   - {fileID: 650160778}
   m_Father: {fileID: 1912503671}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2032,6 +2038,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Leaderboard - \uFEE6\uFEF3\u0631\uFEAA\uFEBC\uFE98\uFEE4\uFEDF\u0627"
   MyTarget: {fileID: 0}
+  othertargets: []
   gameManger: {fileID: 0}
   sample: {fileID: 0}
 --- !u!114 &140087302
@@ -2237,6 +2244,8 @@ GameObject:
   - component: {fileID: 169055543}
   - component: {fileID: 169055545}
   - component: {fileID: 169055544}
+  - component: {fileID: 169055547}
+  - component: {fileID: 169055546}
   m_Layer: 5
   m_Name: "Left Sartorius - \u0633\uFEEE\uFEF3\u0631\uFEEE\uFE97\u0631\uFE8E\uFEB3"
   m_TagString: Untagged
@@ -2301,6 +2310,78 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 169055542}
   m_CullTransparentMesh: 1
+--- !u!50 &169055546
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169055542}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &169055547
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169055542}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 15.723307}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 29.6, y: 149.31961}
+  m_EdgeRadius: 0
 --- !u!1 &171542654
 GameObject:
   m_ObjectHideFlags: 0
@@ -2594,6 +2675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: 
   MyTarget: {fileID: 0}
+  othertargets: []
   gameManger: {fileID: 0}
   sample: {fileID: 0}
 --- !u!114 &210602691
@@ -2895,6 +2977,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Pancreas - \u0633\uFE8E\uFEF3\uFEAE\uFEDC\uFEE8\uFE92"
   MyTarget: {fileID: 1554577385}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!225 &213338716
@@ -3320,6 +3403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Right Humerus - \uFEAA\uFEC0\uFECC\uFEDF\u0627 \uFEE2\uFEC8\uFECB"
   MyTarget: {fileID: 674210001}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!225 &233423202
@@ -3389,6 +3473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Left Tibia - \u0628\uFEEE\uFE92\uFEE8\uFEC8\uFEDF\u0627"
   MyTarget: {fileID: 1684756710}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!50 &236166093
@@ -4016,6 +4101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Left Tibia - \u0628\uFEEE\uFE92\uFEE8\uFEC8\uFEDF\u0627"
   MyTarget: {fileID: 0}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!1 &261572306
@@ -4073,6 +4159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Left Trapezius - \u0641\uFEAE\uFEA4\uFEE8\uFEE3 \uFEEA\uFE92\uFEB7"
   MyTarget: {fileID: 297264896}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!50 &261572309
@@ -4249,6 +4336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: 
   MyTarget: {fileID: 0}
+  othertargets: []
   gameManger: {fileID: 0}
   sample: {fileID: 0}
 --- !u!114 &263824065
@@ -4375,6 +4463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Leaderboard - \uFEE6\uFEF3\u0631\uFEAA\uFEBC\uFE98\uFEE4\uFEDF\u0627"
   MyTarget: {fileID: 0}
+  othertargets: []
   gameManger: {fileID: 0}
   sample: {fileID: 0}
 --- !u!114 &274210849
@@ -4595,7 +4684,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 7.396, y: -217.51337}
+  m_AnchoredPosition: {x: 7.396, y: -133.94711}
   m_SizeDelta: {x: 14.792, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &286352116
@@ -4738,6 +4827,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Right Pectoralis Major - \u0649\uFEAE\uFE92\uFEDC\uFEDF\u0627 \uFE94\uFEF3\u0631\uFEAA\uFEBC\uFEDF\u0627"
   MyTarget: {fileID: 753295059}
+  othertargets:
+  - {fileID: 753295059}
+  - {fileID: 2050663599}
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!1 &289537264
@@ -5437,6 +5529,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Left Tibia - \u0628\uFEEE\uFE92\uFEE8\uFEC8\uFEDF\u0627"
   MyTarget: {fileID: 1155943800}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!50 &327786051
@@ -6030,6 +6123,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Left Fibula - \uFE94\uFEF4\uFEC8\uFEB8\uFEDF\u0627"
   MyTarget: {fileID: 565633973}
+  othertargets:
+  - {fileID: 651011616}
+  - {fileID: 565633973}
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!1 &370669636
@@ -6087,6 +6183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Right Sartorius - \u0633\uFEEE\uFEF3\u0631\uFEEE\uFE97\u0631\uFE8E\uFEB3"
   MyTarget: {fileID: 1627780724}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!61 &370669639
@@ -6266,6 +6363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Right Patella - \uFEEA\uFED4\uFEBF\uFEAE\uFEDF\u0627"
   MyTarget: {fileID: 683815490}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!50 &371713543
@@ -6429,7 +6527,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 7.396, y: -400.02673}
+  m_AnchoredPosition: {x: 7.396, y: -232.89424}
   m_SizeDelta: {x: 14.792, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &378602873
@@ -6572,6 +6670,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Left Brachioradialis - \uFE94\uFEF3\uFEAA\uFEC0\uFECC\uFEDF\u0627"
   MyTarget: {fileID: 309110532}
+  othertargets:
+  - {fileID: 309110532}
+  - {fileID: 1616435417}
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!1 &380049878
@@ -6870,6 +6971,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Left Latissimus Dorsi - \uFEF2\uFEB3\u0631\u0648\u062F"
   MyTarget: {fileID: 1652376357}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!50 &386572794
@@ -7054,6 +7156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Leaderboard - \uFEE6\uFEF3\u0631\uFEAA\uFEBC\uFE98\uFEE4\uFEDF\u0627"
   MyTarget: {fileID: 0}
+  othertargets: []
   gameManger: {fileID: 0}
   sample: {fileID: 0}
 --- !u!114 &389492035
@@ -7259,6 +7362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Left Ulna - \uFEAA\uFEE7\uFEB0\uFEDF\u0627"
   MyTarget: {fileID: 413274567}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!61 &406559035
@@ -7476,6 +7580,7 @@ MonoBehaviour:
   MyName: "Left Rectus Femoris - \uFEE2\uFEF4\uFED8\uFE98\uFEB4\uFEE4\uFEDF\u0627
     \uFEAC\uFEA8\uFED4\uFEDF\u0627 \uFEE2\uFEC8\uFECB"
   MyTarget: {fileID: 1882539298}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!50 &426001273
@@ -8540,6 +8645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Leaderboard - \uFEE6\uFEF3\u0631\uFEAA\uFEBC\uFE98\uFEE4\uFEDF\u0627"
   MyTarget: {fileID: 0}
+  othertargets: []
   gameManger: {fileID: 0}
   sample: {fileID: 0}
 --- !u!114 &480323631
@@ -9675,6 +9781,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: 
   MyTarget: {fileID: 0}
+  othertargets: []
   gameManger: {fileID: 0}
   sample: {fileID: 0}
 --- !u!114 &536647867
@@ -10145,6 +10252,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Adrenal Gland - \uFE94\uFEF3\uFEAE\uFEC8\uFEDC\uFEDF\u0627 \u0629\uFEAA\uFED0\uFEDF\u0627"
   MyTarget: {fileID: 103302533}
+  othertargets:
+  - {fileID: 103302533}
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!1 &565633972
@@ -10478,7 +10587,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "  Right Pectoralis Major - \u0649\uFEAE\uFE92\uFEDC\uFEDF\u0627 \uFE94\uFEF3\u0631\uFEAA\uFEBC\uFEDF\u0627"
+  m_Text: "Pectoralis Major - \u0649\uFEAE\uFE92\uFEDC\uFEDF\u0627 \uFE94\uFEF3\u0631\uFEAA\uFEBC\uFEDF\u0627"
 --- !u!222 &566784844
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10744,6 +10853,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Pancreas - \u0633\uFE8E\uFEF3\uFEAE\uFEDC\uFEE8\uFE92"
   MyTarget: {fileID: 1554577385}
+  othertargets:
+  - {fileID: 1554577385}
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!1 &582388331
@@ -11842,8 +11953,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 84.4, y: -16}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 89.31174, y: -16}
+  m_SizeDelta: {x: 150.1765, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &635453141
 CanvasGroup:
@@ -11884,13 +11995,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 34
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "  Left Fibula - \uFE94\uFEF4\uFEC8\uFEB8\uFEDF\u0627"
+  m_Text: "Fibula - \uFE94\uFEF4\uFEC8\uFEB8\uFEDF\u0627"
 --- !u!222 &635453143
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12245,12 +12356,12 @@ GameObject:
   - component: {fileID: 650160780}
   - component: {fileID: 650160779}
   m_Layer: 5
-  m_Name: "Right Radius - \uFEAE\uFEC4\uFED8\uFEDF\u0627 \uFED2\uFEBC\uFEE7"
+  m_Name: "Right ulna - \uFEAE\uFEC4\uFED8\uFEDF\u0627 \uFED2\uFEBC\uFEE7"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &650160778
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12319,6 +12430,7 @@ GameObject:
   - component: {fileID: 651011616}
   - component: {fileID: 651011620}
   - component: {fileID: 651011619}
+  - component: {fileID: 651011621}
   m_Layer: 5
   m_Name: "Right Fibula - \uFE94\uFEF4\uFEC8\uFEB8\uFEDF\u0627"
   m_TagString: Untagged
@@ -12383,6 +12495,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 651011615}
   m_CullTransparentMesh: 1
+--- !u!61 &651011621
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 651011615}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 31.621, y: 392.6325}
+  m_EdgeRadius: 0
 --- !u!1 &654073279
 GameObject:
   m_ObjectHideFlags: 0
@@ -12559,6 +12716,7 @@ GameObject:
   - component: {fileID: 656422083}
   - component: {fileID: 656422087}
   - component: {fileID: 656422086}
+  - component: {fileID: 656422088}
   m_Layer: 5
   m_Name: "Left Talus - \u0633\uFEEE\uFEDF\uFE8E\uFE97"
   m_TagString: Untagged
@@ -12623,6 +12781,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 656422082}
   m_CullTransparentMesh: 1
+--- !u!61 &656422088
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656422082}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 31.5915, y: 52.1738}
+  m_EdgeRadius: 0
 --- !u!1 &657933122
 GameObject:
   m_ObjectHideFlags: 0
@@ -12690,6 +12893,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Right Humerus - \uFEAA\uFEC0\uFECC\uFEDF\u0627 \uFEE2\uFEC8\uFECB"
   MyTarget: {fileID: 798186052}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!50 &657933126
@@ -12910,6 +13114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Left Scapula - \uFED2\uFE98\uFEDC\uFEDF\u0627 \u062D\uFEEE\uFEDF"
   MyTarget: {fileID: 1210117090}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!1 &674210000
@@ -13406,6 +13611,7 @@ MonoBehaviour:
   MyName: "Left Rectus Abdominis - \uFE94\uFEE4\uFEF4\uFED8\uFE98\uFEB4\uFEE4\uFEDF\u0627
     \uFEE6\uFEC4\uFE92\uFEDF\u0627"
   MyTarget: {fileID: 723639574}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!50 &694931344
@@ -13695,6 +13901,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Thyroid Gland - \uFE94\uFEF4\uFED7\u0631\uFEAA\uFEDF\u0627 \u0629\uFEAA\uFED0\uFEDF\u0627"
   MyTarget: {fileID: 456095283}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!225 &699021685
@@ -14513,6 +14720,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Mandible - \uFEF2\uFEE0\uFED4\uFEB4\uFEDF\u0627 \uFEDA\uFED4\uFEDF\u0627"
   MyTarget: {fileID: 435406043}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!50 &740427362
@@ -15423,6 +15631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Right Pectoralis Major - \u0649\uFEAE\uFE92\uFEDC\uFEDF\u0627 \uFE94\uFEF3\u0631\uFEAA\uFEBC\uFEDF\u0627"
   MyTarget: {fileID: 753295059}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!61 &802738094
@@ -15850,6 +16059,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Right Talus - \u0633\uFEEE\uFEDF\uFE8E\uFE97"
   MyTarget: {fileID: 249726400}
+  othertargets:
+  - {fileID: 656422083}
+  - {fileID: 249726400}
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!1 &821057782
@@ -16035,6 +16247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Left Femur - \uFEAC\uFEA8\uFED4\uFEDF\u0627 \uFEE2\uFEC8\uFECB"
   MyTarget: {fileID: 1670749011}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!1 &854537571
@@ -16665,7 +16878,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 7.396, y: -765.05347}
+  m_AnchoredPosition: {x: 7.396, y: -430.78848}
   m_SizeDelta: {x: 14.792, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &919575295
@@ -16808,6 +17021,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Right Sartorius - \u0633\uFEEE\uFEF3\u0631\uFEEE\uFE97\u0631\uFE8E\uFEB3"
   MyTarget: {fileID: 1627780724}
+  othertargets:
+  - {fileID: 1627780724}
+  - {fileID: 169055543}
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!1 &930549641
@@ -17127,7 +17343,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "  Right Sartorius - \u0633\uFEEE\uFEF3\u0631\uFEEE\uFE97\u0631\uFE8E\uFEB3"
+  m_Text: "Sartorius - \u0633\uFEEE\uFEF3\u0631\uFEEE\uFE97\u0631\uFE8E\uFEB3"
 --- !u!222 &941601831
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17889,6 +18105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Sternum - \uFEBA\uFED8\uFEDF\u0627"
   MyTarget: {fileID: 1774117995}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!1 &970172306
@@ -18220,6 +18437,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Left Calvicle -\u0629\uFEEE\uFED7\uFEAE\uFE98\uFEDF\u0627"
   MyTarget: {fileID: 127973053}
+  othertargets:
+  - {fileID: 1345474169}
+  - {fileID: 127973053}
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!1 &984161765
@@ -18646,7 +18866,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "  Left Brachioradialis - \uFE94\uFEF3\uFEAA\uFEC0\uFECC\uFEDF\u0627"
+  m_Text: "Brachioradialis - \uFE94\uFEF3\uFEAA\uFEC0\uFECC\uFEDF\u0627"
 --- !u!222 &1011433435
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18849,6 +19069,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Start - \u0623\uFEAA\uFE92\uFEF3"
   MyTarget: {fileID: 0}
+  othertargets: []
   gameManger: {fileID: 0}
   sample: {fileID: 0}
 --- !u!114 &1017630624
@@ -19031,6 +19252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Right Talus - \u0633\uFEEE\uFEDF\uFE8E\uFE97"
   MyTarget: {fileID: 816387693}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!50 &1030934106
@@ -19607,6 +19829,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Adrenal Gland - \uFE94\uFEF3\uFEAE\uFEC8\uFEDC\uFEDF\u0627 \u0629\uFEAA\uFED0\uFEDF\u0627"
   MyTarget: {fileID: 103302533}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!225 &1059920656
@@ -19749,6 +19972,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Left Peroneus Longus -  \u0633\uFEEE\uFEA0\uFEE7\uFEEE\uFEDF \u0633\uFEEE\uFEF4\uFEE7\u0648\uFEAE\uFEF4\uFE91"
   MyTarget: {fileID: 984161766}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!50 &1068106774
@@ -20925,8 +21149,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 82.9, y: -14.7}
-  m_SizeDelta: {x: 160, y: 50.8524}
+  m_AnchoredPosition: {x: 88.90677, y: -14.700012}
+  m_SizeDelta: {x: 147.9863, y: 50.8524}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1136712945
 CanvasGroup:
@@ -20967,13 +21191,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 32
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "  Right Patella - \uFEEA\uFED4\uFEBF\uFEAE\uFEDF\u0627"
+  m_Text: "Patella - \uFEEA\uFED4\uFEBF\uFEAE\uFEDF\u0627"
 --- !u!222 &1136712948
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21164,6 +21388,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Pituitary Gland - \uFE94\uFEF4\uFEE3\uFE8E\uFEA8\uFEE8\uFEDF\u0627 \u0629\uFEAA\uFED0\uFEDF\u0627"
   MyTarget: {fileID: 1487453366}
+  othertargets:
+  - {fileID: 1487453366}
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!1 &1155333211
@@ -21201,8 +21427,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 78.399994, y: -14.799988}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 86.53943, y: -14.799988}
+  m_SizeDelta: {x: 143.7211, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1155333213
 CanvasGroup:
@@ -21243,13 +21469,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 32
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Left Ulna - \uFEAA\uFEE7\uFEB0\uFEDF\u0627"
+  m_Text: "Ulna - \uFEAA\uFEE7\uFEB0\uFEDF\u0627"
 --- !u!222 &1155333216
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21709,6 +21935,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Left Brachioradialis - \uFE94\uFEF3\uFEAA\uFEC0\uFECC\uFEDF\u0627"
   MyTarget: {fileID: 309110532}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!50 &1191597501
@@ -22217,6 +22444,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Left Ulna - \uFEAA\uFEE7\uFEB0\uFEDF\u0627"
   MyTarget: {fileID: 743303348}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!61 &1273753400
@@ -22352,6 +22580,8 @@ GameObject:
   - component: {fileID: 1274130158}
   - component: {fileID: 1274130160}
   - component: {fileID: 1274130159}
+  - component: {fileID: 1274130162}
+  - component: {fileID: 1274130161}
   m_Layer: 5
   m_Name: "Right Trapezius - \u0641\uFEAE\uFEA4\uFEE8\uFEE3 \uFEEA\uFE92\uFEB7"
   m_TagString: Untagged
@@ -22416,6 +22646,245 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1274130157}
   m_CullTransparentMesh: 1
+--- !u!50 &1274130161
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274130157}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &1274130162
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274130157}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -6.960493, y: -18.918242}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 99.079025, y: 55.163532}
+  m_EdgeRadius: 0
+--- !u!1 &1275651887
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1275651888}
+  - component: {fileID: 1275651892}
+  - component: {fileID: 1275651891}
+  - component: {fileID: 1275651889}
+  - component: {fileID: 1275651893}
+  m_Layer: 5
+  m_Name: "Right Ulna - \uFEAA\uFEE7\uFEB0\uFEDF\u0627 "
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1275651888
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275651887}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 107987339}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 13, y: -53}
+  m_SizeDelta: {x: 87.3186, y: 189.6728}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!50 &1275651889
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275651887}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &1275651891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275651887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.6431373, g: 0.6431373, b: 0.6431373, a: 0.36862746}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 4066654628d0d4352b5accee7912763f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1275651892
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275651887}
+  m_CullTransparentMesh: 1
+--- !u!60 &1275651893
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275651887}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 21.042109, y: 78.97239}
+      - {x: 19.058983, y: 72.70604}
+      - {x: 16.351898, y: 57.73951}
+      - {x: 0.63636446, y: 24.54498}
+      - {x: -13.678065, y: -2.872637}
+      - {x: -42.996777, y: -81.46407}
+      - {x: -42.544235, y: -90.7184}
+      - {x: -36.551258, y: -94.16758}
+      - {x: -30.580357, y: -85.70102}
+      - {x: -20.197502, y: -55.284195}
+      - {x: -1.4173803, y: -17.291864}
+      - {x: 12.598792, y: 12.80072}
+      - {x: 31.6196, y: 49.762283}
+      - {x: 43.634365, y: 64.52449}
+      - {x: 39.94642, y: 74.29328}
+      - {x: 43.522278, y: 87.72984}
+      - {x: 39.495163, y: 93.68909}
+      - {x: 32.76861, y: 94.48905}
+  m_UseDelaunayMesh: 0
 --- !u!1 &1288946783
 GameObject:
   m_ObjectHideFlags: 0
@@ -22886,6 +23355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Left Calvicle -\u0629\uFEEE\uFED7\uFEAE\uFE98\uFEDF\u0627"
   MyTarget: {fileID: 127973053}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!50 &1313089163
@@ -23248,6 +23718,8 @@ GameObject:
   - component: {fileID: 1345474169}
   - component: {fileID: 1345474171}
   - component: {fileID: 1345474170}
+  - component: {fileID: 1345474173}
+  - component: {fileID: 1345474172}
   m_Layer: 5
   m_Name: "Calvicle  Right -\u0629\uFEEE\uFED7\uFEAE\uFE98\uFEDF\u0627"
   m_TagString: Untagged
@@ -23312,6 +23784,78 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1345474168}
   m_CullTransparentMesh: 1
+--- !u!50 &1345474172
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345474168}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &1345474173
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345474168}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 149.9138, y: 23.5672}
+  m_EdgeRadius: 0
 --- !u!1 &1353710709
 GameObject:
   m_ObjectHideFlags: 0
@@ -23546,7 +24090,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "  Left Calvicle -\u0629\uFEEE\uFED7\uFEAE\uFE98\uFEDF\u0627"
+  m_Text: "Calvicle -\u0629\uFEEE\uFED7\uFEAE\uFE98\uFEDF\u0627"
 --- !u!222 &1361262341
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23737,6 +24281,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Left Ulna - \uFEAA\uFEE7\uFEB0\uFEDF\u0627"
   MyTarget: {fileID: 699239969}
+  othertargets:
+  - {fileID: 1275651888}
+  - {fileID: 699239969}
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!1 &1382780795
@@ -23794,6 +24341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Right Talus - \u0633\uFEEE\uFEDF\uFE8E\uFE97"
   MyTarget: {fileID: 249726400}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!50 &1382780798
@@ -24405,6 +24953,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Leaderboard - \uFEE6\uFEF3\u0631\uFEAA\uFEBC\uFE98\uFEE4\uFEDF\u0627"
   MyTarget: {fileID: 0}
+  othertargets: []
   gameManger: {fileID: 0}
   sample: {fileID: 0}
 --- !u!114 &1422887065
@@ -24625,7 +25174,7 @@ GameObject:
   - component: {fileID: 1478731624}
   - component: {fileID: 1478731623}
   m_Layer: 5
-  m_Name: "Right Ulna - \uFEAA\uFEE7\uFEB0\uFEDF\u0627"
+  m_Name: "Right radius - \uFEAA\uFEE7\uFEB0\uFEDF\u0627"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24971,6 +25520,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Mandible - \uFEF2\uFEE0\uFED4\uFEB4\uFEDF\u0627 \uFEDA\uFED4\uFEDF\u0627"
   MyTarget: {fileID: 1511694191}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!50 &1487850742
@@ -25378,6 +25928,8 @@ GameObject:
   - component: {fileID: 1517973740}
   - component: {fileID: 1517973744}
   - component: {fileID: 1517973743}
+  - component: {fileID: 1517973746}
+  - component: {fileID: 1517973745}
   m_Layer: 5
   m_Name: "Left Patella - \uFEEA\uFED4\uFEBF\uFEAE\uFEDF\u0627"
   m_TagString: Untagged
@@ -25442,6 +25994,78 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1517973739}
   m_CullTransparentMesh: 1
+--- !u!50 &1517973745
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517973739}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &1517973746
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517973739}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 37.883, y: 41.1776}
+  m_EdgeRadius: 0
 --- !u!1 &1521694931
 GameObject:
   m_ObjectHideFlags: 0
@@ -25509,6 +26133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Right Patella - \uFEEA\uFED4\uFEBF\uFEAE\uFEDF\u0627"
   MyTarget: {fileID: 488066236}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!50 &1521694935
@@ -25828,6 +26453,7 @@ MonoBehaviour:
   MyName: "Left iliopsoas - \uFE94\uFEF4\uFEE8\uFEC4\uFED7 \uFE94\uFEF4\uFED4\uFED7\uFEAE\uFEA3
     \uFE94\uFEE0\uFEC0\uFECB"
   MyTarget: {fileID: 447625832}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!50 &1535166563
@@ -25963,6 +26589,8 @@ GameObject:
   - component: {fileID: 1543646506}
   - component: {fileID: 1543646508}
   - component: {fileID: 1543646507}
+  - component: {fileID: 1543646510}
+  - component: {fileID: 1543646509}
   m_Layer: 5
   m_Name: "Right Rectus Abdominis - \uFE94\uFEE4\uFEF4\uFED8\uFE98\uFEB4\uFEE4\uFEDF\u0627
     \uFEE6\uFEC4\uFE92\uFEDF\u0627"
@@ -26028,6 +26656,78 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1543646505}
   m_CullTransparentMesh: 1
+--- !u!50 &1543646509
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543646505}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &1543646510
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543646505}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 50, y: 50}
+  m_EdgeRadius: 0
 --- !u!1 &1547920496
 GameObject:
   m_ObjectHideFlags: 0
@@ -26067,7 +26767,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 7.396, y: -582.5401}
+  m_AnchoredPosition: {x: 7.396, y: -331.84137}
   m_SizeDelta: {x: 14.792, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1547920498
@@ -26210,6 +26910,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Right Deltoid - \uFE94\uFEF4\uFEDF\u0627\uFEAA\uFEDF\u0627 \uFE94\uFEE0\uFEC0\uFECC\uFEDF\u0627"
   MyTarget: {fileID: 1745541076}
+  othertargets:
+  - {fileID: 1745541076}
+  - {fileID: 1617354134}
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!1 &1554577384
@@ -26628,6 +27331,8 @@ GameObject:
   - component: {fileID: 1616435417}
   - component: {fileID: 1616435419}
   - component: {fileID: 1616435418}
+  - component: {fileID: 1616435421}
+  - component: {fileID: 1616435420}
   m_Layer: 5
   m_Name: "Right Brachioradialis - \uFE94\uFEF3\uFEAA\uFEC0\uFECC\uFEDF\u0627"
   m_TagString: Untagged
@@ -26692,6 +27397,78 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1616435416}
   m_CullTransparentMesh: 1
+--- !u!50 &1616435420
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616435416}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &1616435421
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616435416}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 35, y: 260}
+  m_EdgeRadius: 0
 --- !u!1 &1617354133
 GameObject:
   m_ObjectHideFlags: 0
@@ -26703,6 +27480,8 @@ GameObject:
   - component: {fileID: 1617354134}
   - component: {fileID: 1617354136}
   - component: {fileID: 1617354135}
+  - component: {fileID: 1617354138}
+  - component: {fileID: 1617354137}
   m_Layer: 5
   m_Name: "Left Deltoid - \uFE94\uFEF4\uFEDF\u0627\uFEAA\uFEDF\u0627 \uFE94\uFEE0\uFEC0\uFECC\uFEDF\u0627"
   m_TagString: Untagged
@@ -26767,6 +27546,78 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1617354133}
   m_CullTransparentMesh: 1
+--- !u!50 &1617354137
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617354133}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &1617354138
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617354133}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -19.57, y: 30.16}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 70, y: 70}
+  m_EdgeRadius: 0
 --- !u!1 &1622924703
 GameObject:
   m_ObjectHideFlags: 0
@@ -27422,6 +28273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Left Fibula - \uFE94\uFEF4\uFEC8\uFEB8\uFEDF\u0627"
   MyTarget: {fileID: 565633973}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!61 &1646559360
@@ -27925,6 +28777,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Mandible - \uFEF2\uFEE0\uFED4\uFEB4\uFEDF\u0627 \uFEDA\uFED4\uFEDF\u0627"
   MyTarget: {fileID: 1511694191}
+  othertargets:
+  - {fileID: 1511694191}
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!1 &1668476654
@@ -28842,6 +29696,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Thyroid Gland - \uFE94\uFEF4\uFED7\u0631\uFEAA\uFEDF\u0627 \u0629\uFEAA\uFED0\uFEDF\u0627"
   MyTarget: {fileID: 456095283}
+  othertargets:
+  - {fileID: 456095283}
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!1 &1701778317
@@ -29066,6 +29922,7 @@ MonoBehaviour:
   MyName: "Left Biceps Brachii -  \uFE94\uFEF3\uFEAA\uFEC0\uFECC\uFEDF\u0627 \uFEE6\uFEF4\uFEB3\u0623\uFEAE\uFEDF\u0627
     \u062A\u0627\u0630 \uFE94\uFEE0\uFEC0\uFECC\uFEDF\u0627"
   MyTarget: {fileID: 545800382}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!50 &1702153713
@@ -30466,6 +31323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Right Humerus - \uFEAA\uFEC0\uFECC\uFEDF\u0627 \uFEE2\uFEC8\uFECB"
   MyTarget: {fileID: 0}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!1 &1789677147
@@ -31042,6 +31900,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Pituitary Gland - \uFE94\uFEF4\uFEE3\uFE8E\uFEA8\uFEE8\uFEDF\u0627 \u0629\uFEAA\uFED0\uFEDF\u0627"
   MyTarget: {fileID: 1487453366}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!225 &1821877702
@@ -31273,6 +32132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: 
   MyTarget: {fileID: 0}
+  othertargets: []
   gameManger: {fileID: 0}
   sample: {fileID: 0}
 --- !u!114 &1842895805
@@ -31806,6 +32666,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Leaderboard - \uFEE6\uFEF3\u0631\uFEAA\uFEBC\uFE98\uFEE4\uFEDF\u0627"
   MyTarget: {fileID: 0}
+  othertargets: []
   gameManger: {fileID: 0}
   sample: {fileID: 0}
 --- !u!114 &1885444125
@@ -32347,7 +33208,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "  Left Rectus Abdominis - \uFE94\uFEE4\uFEF4\uFED8\uFE98\uFEB4\uFEE4\uFEDF\u0627
+  m_Text: "Rectus Abdominis - \uFE94\uFEE4\uFEF4\uFED8\uFE98\uFEB4\uFEE4\uFEDF\u0627
     \uFEE6\uFEC4\uFE92\uFEDF\u0627"
 --- !u!222 &1946240201
 CanvasRenderer:
@@ -32876,6 +33737,9 @@ MonoBehaviour:
   MyName: "Left Rectus Abdominis - \uFE94\uFEE4\uFEF4\uFED8\uFE98\uFEB4\uFEE4\uFEDF\u0627
     \uFEE6\uFEC4\uFE92\uFEDF\u0627"
   MyTarget: {fileID: 723639574}
+  othertargets:
+  - {fileID: 723639574}
+  - {fileID: 1543646506}
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!1 &2023276378
@@ -33172,7 +34036,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "  Right Deltoid - \uFE94\uFEF4\uFEDF\u0627\uFEAA\uFEDF\u0627 \uFE94\uFEE0\uFEC0\uFECC\uFEDF\u0627"
+  m_Text: "Deltoid - \uFE94\uFEF4\uFEDF\u0627\uFEAA\uFEDF\u0627 \uFE94\uFEE0\uFEC0\uFECC\uFEDF\u0627"
 --- !u!222 &2033328770
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -33236,6 +34100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Right Deltoid - \uFE94\uFEF4\uFEDF\u0627\uFEAA\uFEDF\u0627 \uFE94\uFEE0\uFEC0\uFECC\uFEDF\u0627"
   MyTarget: {fileID: 1745541076}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!50 &2038668459
@@ -33505,6 +34370,8 @@ GameObject:
   - component: {fileID: 2050663599}
   - component: {fileID: 2050663601}
   - component: {fileID: 2050663600}
+  - component: {fileID: 2050663603}
+  - component: {fileID: 2050663602}
   m_Layer: 5
   m_Name: "Left Pactoralis Major - \u0649\uFEAE\uFE92\uFEDC\uFEDF\u0627 \uFE94\uFEF3\u0631\uFEAA\uFEBC\uFEDF\u0627"
   m_TagString: Untagged
@@ -33569,6 +34436,78 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2050663598}
   m_CullTransparentMesh: 1
+--- !u!50 &2050663602
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050663598}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &2050663603
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050663598}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 100, y: 100}
+  m_EdgeRadius: 0
 --- !u!1 &2059893399
 GameObject:
   m_ObjectHideFlags: 0
@@ -33636,6 +34575,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Left Calvicle -\u0629\uFEEE\uFED7\uFEAE\uFE98\uFEDF\u0627"
   MyTarget: {fileID: 1686803709}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!50 &2059893403
@@ -33783,8 +34723,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 88.399994, y: -15.599976}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 91.627686, y: -15.599976}
+  m_SizeDelta: {x: 153.5446, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &2084552254
 CanvasGroup:
@@ -33825,13 +34765,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 32
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Right Talus - \u0633\uFEEE\uFEDF\uFE8E\uFE97"
+  m_Text: "Talus - \u0633\uFEEE\uFEDF\uFE8E\uFE97"
 --- !u!222 &2084552257
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -34105,6 +35045,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Left Radius - \uFEAE\uFEC4\uFED8\uFEDF\u0627 \uFED2\uFEBC\uFEE7"
   MyTarget: {fileID: 395022153}
+  othertargets: []
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!1 &2101410843
@@ -34146,7 +35087,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 7.396, y: -947.56683}
+  m_AnchoredPosition: {x: 7.396, y: -529.7356}
   m_SizeDelta: {x: 14.792, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &2101410845
@@ -34289,6 +35230,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MyName: "Left Trapezius - \u0641\uFEAE\uFEA4\uFEE8\uFEE3 \uFEEA\uFE92\uFEB7"
   MyTarget: {fileID: 297264896}
+  othertargets:
+  - {fileID: 297264896}
+  - {fileID: 1274130158}
   gameManger: {fileID: 6199435}
   sample: {fileID: 0}
 --- !u!1 &2101478788
@@ -34466,7 +35410,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "  Left Trapezius - \u0641\uFEAE\uFEA4\uFEE8\uFEE3 \uFEEA\uFE92\uFEB7"
+  m_Text: "Trapezius - \u0641\uFEAE\uFEA4\uFEE8\uFEE3 \uFEEA\uFE92\uFEB7"
 --- !u!222 &2110675687
 CanvasRenderer:
   m_ObjectHideFlags: 0

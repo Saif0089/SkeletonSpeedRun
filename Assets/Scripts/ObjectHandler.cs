@@ -15,7 +15,9 @@ public class ObjectHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     private CanvasGroup canvasGroup;
     private Vector2 originalPosition;
     private Canvas canvas;
+  
     public RectTransform MyTarget;
+    public List<RectTransform> othertargets=new List<RectTransform>();
     bool isConnected;
     public GameManger gameManger;
 
@@ -78,16 +80,18 @@ public class ObjectHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log(other.gameObject.name);
-        if (other.gameObject == MyTarget.gameObject)
+        if (other.gameObject == MyTarget.gameObject || othertargets.FirstOrDefault(x=>x.gameObject==other.gameObject)!=null)
         {
             collided = true;
+            MyTarget = other.GetComponent<RectTransform>();
         }
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject == MyTarget.gameObject)
+        if (other.gameObject == MyTarget.gameObject || othertargets.FirstOrDefault(x => x.gameObject == other.gameObject) != null)
         {
             collided = false;
+            MyTarget = other.GetComponent<RectTransform>();
         }
     }
     // Called when dragging ends
