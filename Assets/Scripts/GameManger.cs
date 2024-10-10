@@ -39,7 +39,7 @@ public class GameManger : MonoBehaviour
     public GameObject ScorePrefab;
     public GameObject Leaderboard;
     public Button StartGameButton;
-    public Text StartGameButtonText;
+    public TextMeshProUGUI StartGameButtonText;
     public int StageNumber =1;
     public Image LoadingScreen;
     public GameObject GameOverPanel;
@@ -107,7 +107,7 @@ public class GameManger : MonoBehaviour
         StopGame();
 
         TakeNamePanel.SetActive(false);
-        StartGameText.SetActive(true);
+     //   StartGameText.SetActive(true);
         bonesSection.SetActive(false);
         Leaderboard.SetActive(false);
         StartGameButton.gameObject.SetActive(true);
@@ -121,7 +121,7 @@ public class GameManger : MonoBehaviour
         if (nameAssigned)
         {
             TakeNamePanel.SetActive(false);
-            StartGameText.SetActive(false);
+          //  StartGameText.SetActive(false);
             bonesSection.SetActive(true);
             Leaderboard.SetActive(false);
             
@@ -135,9 +135,9 @@ public class GameManger : MonoBehaviour
         {
             PlayerNameText.text=$"Player{(int)UnityEngine.Random.Range(1000,100000)}";
             InputnameError.SetActive(false);
-            StartGameButton.gameObject.SetActive(false);
+             StartGameButton.gameObject.SetActive(false);
             TakeNamePanel.SetActive(true);
-            StartGameText.SetActive(false);
+           // StartGameText.SetActive(false);
             bonesSection.SetActive(false);
             Leaderboard.SetActive(false);
             Started = false;
