@@ -55,7 +55,7 @@ public class GameManger : MonoBehaviour
     bool canplaydemo = true;
     string playername;
     bool nameAssigned=false;
-
+    int totalCorrect = 0;
 
     private void Awake()
     {
@@ -69,7 +69,7 @@ public class GameManger : MonoBehaviour
         if (!string.IsNullOrEmpty(PlayerPrefs.GetString("ScoreJson")))
         {
             PlayerScoress = JsonConvert.DeserializeObject<List<PlayerData>>(PlayerPrefs.GetString("ScoreJson"));
-            PlayerScoress.Sort();
+           // PlayerScoress.Sort();
         }
     }
 
@@ -85,6 +85,7 @@ public class GameManger : MonoBehaviour
             TakeNamePanel.SetActive(false);
             StartGameText.SetActive(false);
             bonesSection.SetActive(true);
+            gametime = 20;
             nameAssigned = true;
             Started = true;
             StartGameButton.gameObject.SetActive(true);
@@ -121,6 +122,7 @@ public class GameManger : MonoBehaviour
             StartGameText.SetActive(false);
             bonesSection.SetActive(true);
             Leaderboard.SetActive(false);
+            
             Started = true;
             StartGameButtonText.text = "Stop - ﻒﻗ";
             StartGameButton.targetGraphic.color = Color.red;
@@ -156,12 +158,17 @@ public class GameManger : MonoBehaviour
 
 
         if(Started){
-            gametime += Time.deltaTime;
-            GameTimeText.text = gametime.ToString("0.0");
-            if(gametime>=120){
+            gametime -= Time.deltaTime;
+            
+            if(gametime<=0){
 
+                GameTimeText.text = "0.0 sec";
                 Started = false;
                 GameOver();
+            }
+            else
+            {
+                GameTimeText.text = gametime.ToString("0.0") + " sec";
             }
         }
         else
@@ -251,24 +258,28 @@ public class GameManger : MonoBehaviour
             Started = false;
             muscleManager.OrganImages.ForEach(x => x.color = new Color(1, 1, 1, 1));
                 ConnectedObjects = 0;
-                LoadingScreen.gameObject.SetActive(true);
-                await UniTask.Delay(1000, ignoreTimeScale: false);
-                LoadingScreen.DOFade(1, 1f);
-                await UniTask.Delay(2000, ignoreTimeScale: false);
-                organSection.SetActive(false);
-                muscleSection.SetActive(false);
-                LoadingScreen.DOFade(0, 1f);
-                await UniTask.Delay(1000, ignoreTimeScale: false);
+                //LoadingScreen.gameObject.SetActive(true);
+                //await UniTask.Delay(1000, ignoreTimeScale: false);
+                //LoadingScreen.DOFade(1, 1f);
+                //await UniTask.Delay(2000, ignoreTimeScale: false);
+                //organSection.SetActive(false);
+                //muscleSection.SetActive(false);
+                //LoadingScreen.DOFade(0, 1f);
+                //await UniTask.Delay(1000, ignoreTimeScale: false);
                 LoadingScreen.gameObject.SetActive(false);
           
             PlayerData data = new PlayerData();
             data.name = playername;
             data.score = gametime;
             PlayerScoress.Add(data);
-            PlayerScoress.Sort();
+           // PlayerScoress.Sort();
             string json = JsonConvert.SerializeObject(PlayerScoress);
             PlayerPrefs.SetString("ScoreJson", json);
-            ShowLeaderBoard();
+
+            GameWinScore.transform.GetChild(0).GetComponent<TMP_Text>().text = playername.ToString();
+            GameWinScore.transform.GetChild(1).GetComponent<TMP_Text>().text = gametime.ToString("0.0")+ "sec";
+            GameWinPanel.gameObject.SetActive(true);
+           // ShowLeaderBoard();
         }
         
     }
