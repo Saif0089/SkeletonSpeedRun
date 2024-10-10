@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -85,7 +86,7 @@ public class GameManger : MonoBehaviour
             TakeNamePanel.SetActive(false);
             StartGameText.SetActive(false);
             bonesSection.SetActive(true);
-            gametime = 20;
+            gametime = 120;
             nameAssigned = true;
             Started = true;
             StartGameButton.gameObject.SetActive(true);
@@ -131,7 +132,7 @@ public class GameManger : MonoBehaviour
         }
         else
         {
-            PlayerNameText.text=$"Player{(int)Random.Range(10000,100000)}";
+            PlayerNameText.text=$"Player{(int)UnityEngine.Random.Range(1000,100000)}";
             InputnameError.SetActive(false);
             StartGameButton.gameObject.SetActive(false);
             TakeNamePanel.SetActive(true);
@@ -162,13 +163,15 @@ public class GameManger : MonoBehaviour
             
             if(gametime<=0){
 
-                GameTimeText.text = "0.0 sec";
+                GameTimeText.text = "0:00 sec";
                 Started = false;
                 GameOver();
             }
             else
             {
-                GameTimeText.text = gametime.ToString("0.0") + " sec";
+                var ts = TimeSpan.FromSeconds(gametime);
+               
+                GameTimeText.text = string.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds)+" sec";
             }
         }
         else
