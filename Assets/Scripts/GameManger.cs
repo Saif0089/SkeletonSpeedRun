@@ -70,7 +70,8 @@ public class GameManger : MonoBehaviour
         if (!string.IsNullOrEmpty(PlayerPrefs.GetString("ScoreJson")))
         {
             PlayerScoress = JsonConvert.DeserializeObject<List<PlayerData>>(PlayerPrefs.GetString("ScoreJson"));
-           // PlayerScoress.Sort();
+            PlayerScoress.Sort((p1, p2) => p1.score.CompareTo(p2.score));
+            // PlayerScoress.Sort();
         }
     }
 
@@ -275,7 +276,9 @@ public class GameManger : MonoBehaviour
             data.name = playername;
             data.score = gametime;
             PlayerScoress.Add(data);
-           // PlayerScoress.Sort();
+            PlayerScoress.Sort((p1, p2) => p1.score.CompareTo(p2.score));
+
+            // PlayerScoress.Sort();
             string json = JsonConvert.SerializeObject(PlayerScoress);
             PlayerPrefs.SetString("ScoreJson", json);
 

@@ -101,11 +101,13 @@ public class ObjectHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         canvasGroup.blocksRaycasts = true;
         float distance = Vector3.Distance(rectTransform.transform.position, MyTarget.transform.position);
         Debug.Log(distance);
-        if (collided)
+        if (collided && set==false)
         {
             DoAttached();
+            set = true;
         }
     }
+    bool set = false;
     [ContextMenu("Attach")]
     public void DoAttached()
     {
