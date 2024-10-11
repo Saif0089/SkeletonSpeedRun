@@ -56,7 +56,8 @@ public class GameManger : MonoBehaviour
     bool canplaydemo = true;
     string playername;
     bool nameAssigned=false;
-    int totalCorrect = 0;
+    public TextMeshProUGUI correctAnswersText;
+
 
     private void Awake()
     {
@@ -87,7 +88,7 @@ public class GameManger : MonoBehaviour
             TakeNamePanel.SetActive(false);
             StartGameText.SetActive(false);
             bonesSection.SetActive(true);
-            gametime = 120;
+         
             nameAssigned = true;
             Started = true;
             StartGameButton.gameObject.SetActive(true);
@@ -160,20 +161,19 @@ public class GameManger : MonoBehaviour
 
 
         if(Started){
-            gametime -= Time.deltaTime;
-            
-            if(gametime<=0){
+            gametime += Time.deltaTime;
+            var ts = TimeSpan.FromSeconds(gametime);
+            GameTimeText.text = string.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds) + " sec";
+            if (gametime>=120){
 
-                GameTimeText.text = "0:00 sec";
+       
+
+            
                 Started = false;
                 GameOver();
             }
-            else
-            {
-                var ts = TimeSpan.FromSeconds(gametime);
-               
-                GameTimeText.text = string.Format("{0:00}:{1:00}", ts.Minutes, ts.Seconds)+" sec";
-            }
+      
+       
         }
         else
         {
@@ -212,6 +212,7 @@ public class GameManger : MonoBehaviour
     public void GameOver()
     {
         StopGame();
+        correctAnswersText.text =$"{ConnectedObjects} / 16";
         GameOverPanel.SetActive(true);
     }
     public async UniTask FinishGame()
@@ -283,7 +284,7 @@ public class GameManger : MonoBehaviour
             PlayerPrefs.SetString("ScoreJson", json);
 
             GameWinScore.transform.GetChild(0).GetComponent<TMP_Text>().text = playername.ToString();
-            GameWinScore.transform.GetChild(1).GetComponent<TMP_Text>().text = gametime.ToString("0.0")+ "sec";
+            GameWinScore.transform.GetChild(1).GetComponent<TMP_Text>().text = gametime.ToString("0.0")+ " sec";
             GameWinPanel.gameObject.SetActive(true);
            // ShowLeaderBoard();
         }
@@ -306,7 +307,7 @@ public class GameManger : MonoBehaviour
                 go.transform.GetChild(1).GetComponent<TMP_Text>().color = Color.gray;
             }
             go.transform.GetChild(0).GetComponent<TMP_Text>().text = PlayerScoress[i].name.ToString();
-            go.transform.GetChild(1).GetComponent<TMP_Text>().text = PlayerScoress[i].score.ToString("0.0");
+            go.transform.GetChild(1).GetComponent<TMP_Text>().text = PlayerScoress[i].score.ToString("0.0") + " sec";
             InstantiatedScores.Add(go);
         }
         Leaderboard.SetActive(true);

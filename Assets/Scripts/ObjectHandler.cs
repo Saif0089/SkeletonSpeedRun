@@ -20,6 +20,7 @@ public class ObjectHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public List<RectTransform> othertargets=new List<RectTransform>();
     bool isConnected;
     public GameManger gameManger;
+    bool inbody = false;
 
     [ContextMenu("Fix")]
     public void FixArabic()
@@ -84,6 +85,9 @@ public class ObjectHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         {
             collided = true;
             MyTarget = other.GetComponent<RectTransform>();
+        }else if(other.gameObject.tag.Equals("body"))
+        {
+            inbody = true;
         }
     }
     private void OnTriggerExit2D(Collider2D other)
@@ -93,6 +97,10 @@ public class ObjectHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             collided = false;
             MyTarget = other.GetComponent<RectTransform>();
         }
+        else if (other.gameObject.tag.Equals("body"))
+        {
+            inbody = false;
+        }
     }
     // Called when dragging ends
     public void OnEndDrag(PointerEventData eventData)
@@ -101,20 +109,23 @@ public class ObjectHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         canvasGroup.blocksRaycasts = true;
         float distance = Vector3.Distance(rectTransform.transform.position, MyTarget.transform.position);
         Debug.Log(distance);
-        if (collided && set==false)
+        if (collided && set == false)
         {
             DoAttached();
             set = true;
         }
+        
     }
+   
     bool set = false;
     [ContextMenu("Attach")]
     public void DoAttached()
     {
-        // rectTransform.anchoredPosition = MyTarget.anchoredPosition;
+        
         MyTarget.GetComponent<Image>().color = Color.white;
         isConnected = true;
         GameManger.Instance.ConnectedObjects += 1;
+
         // transform.parent = transform.parent.transform;
         if (GameManger.Instance.ConnectedObjects == GameManger.Instance.boneManager.Bones.Count && GameManger.Instance.StageNumber == 1)
         {
