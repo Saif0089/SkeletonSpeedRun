@@ -19,6 +19,8 @@ public class ObjectHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public RectTransform MyTarget;
     public List<RectTransform> othertargets=new List<RectTransform>();
     bool isConnected;
+
+    public bool IsConnected => isConnected;
     public GameManger gameManger;
     bool inbody = false;
 
@@ -109,14 +111,55 @@ public class ObjectHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         canvasGroup.blocksRaycasts = true;
         float distance = Vector3.Distance(rectTransform.transform.position, MyTarget.transform.position);
         Debug.Log(distance);
+
+
+        if (inbody)
+        {
+            if (!gameManger.objectHandlers.Contains(this))
+            {
+                gameManger.objectHandlers.Add(this);
+            }
+        }
+        else
+        {
+            if (gameManger.objectHandlers.Contains(this))
+            {
+                gameManger.objectHandlers.Remove(this);
+            }
+        }
+
         if (collided && set == false)
         {
             DoAttached();
             set = true;
         }
+        else
+        {
+
+
+            CheckAllin();
+         
+
+        }
         
     }
    
+    public void CheckAllin()
+    {
+        if ((GameManger.Instance.objectHandlers.Count == GameManger.Instance.boneManager.Bones.Count) && GameManger.Instance.StageNumber == 1)
+        {
+            GameManger.Instance.FinishGame();
+        }
+        else if (GameManger.Instance.objectHandlers.Count == (GameManger.Instance.boneManager.Bones.Count + GameManger.Instance.organManager.Organs.Count)
+            && GameManger.Instance.StageNumber == 2)
+        {
+            GameManger.Instance.FinishGame();
+        }
+        else if (GameManger.Instance.objectHandlers.Count >= (GameManger.Instance.boneManager.Bones.Count + GameManger.Instance.organManager.Organs.Count + GameManger.Instance.muscleManager.Muscles.Count) && GameManger.Instance.StageNumber >= 3)
+        {
+            GameManger.Instance.FinishGame();
+        }
+    }
     bool set = false;
     [ContextMenu("Attach")]
     public void DoAttached()
@@ -126,8 +169,10 @@ public class ObjectHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         isConnected = true;
         GameManger.Instance.ConnectedObjects += 1;
 
+        GameManger.Instance.CorrectAnsers += 1;
+
         // transform.parent = transform.parent.transform;
-        if (GameManger.Instance.ConnectedObjects == GameManger.Instance.boneManager.Bones.Count && GameManger.Instance.StageNumber == 1)
+        if ((GameManger.Instance.ConnectedObjects == GameManger.Instance.boneManager.Bones.Count) && GameManger.Instance.StageNumber == 1)
         {
             GameManger.Instance.FinishGame();
         }
@@ -135,10 +180,13 @@ public class ObjectHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         {
             GameManger.Instance.FinishGame();
         }
-        else if (GameManger.Instance.ConnectedObjects == GameManger.Instance.muscleManager.Muscles.Count && GameManger.Instance.StageNumber == 3)
+        else if (GameManger.Instance.ConnectedObjects >= GameManger.Instance.muscleManager.Muscles.Count && GameManger.Instance.StageNumber >= 3)
         {
             GameManger.Instance.FinishGame();
         }
+
+
+        CheckAllin();
     }
     // Optional: Reset the element back to its original position
     public void ResetPosition()

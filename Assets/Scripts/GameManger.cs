@@ -18,6 +18,8 @@ public class  PlayerData
 {
     public float score;
     public string name;
+    public int correct;
+    public int incorrect;
     
 }
 
@@ -56,9 +58,12 @@ public class GameManger : MonoBehaviour
     bool canplaydemo = true;
     string playername;
     bool nameAssigned=false;
-    public TextMeshProUGUI correctAnswersText;
-
-
+    public TextMeshProUGUI correctLostAnswersText;
+    public TextMeshProUGUI IncorrectLostAnswersText;
+    public TextMeshProUGUI correctWinAnswersText;
+    public TextMeshProUGUI IncorrectWinAnswersText;
+    public int CorrectAnsers=0;
+    public List<ObjectHandler> objectHandlers = new List<ObjectHandler>();
     private void Awake()
     {
         DOTween.Init();
@@ -71,7 +76,7 @@ public class GameManger : MonoBehaviour
         if (!string.IsNullOrEmpty(PlayerPrefs.GetString("ScoreJson")))
         {
             PlayerScoress = JsonConvert.DeserializeObject<List<PlayerData>>(PlayerPrefs.GetString("ScoreJson"));
-            PlayerScoress.Sort((p1, p2) => p1.score.CompareTo(p2.score));
+            PlayerScoress.Sort((p1, p2) => p1.score.CompareTo(p2.score).CompareTo(p1.correct) );
             // PlayerScoress.Sort();
         }
     }
@@ -119,6 +124,7 @@ public class GameManger : MonoBehaviour
 
     public void StartGame()
     {
+        CorrectAnsers = 0;
         if (nameAssigned)
         {
             TakeNamePanel.SetActive(false);
@@ -212,7 +218,9 @@ public class GameManger : MonoBehaviour
     public void GameOver()
     {
         StopGame();
-        correctAnswersText.text =$"{ConnectedObjects} / 16";
+        correctLostAnswersText.text =$"{CorrectAnsers} / 16"; //objectHandlers.FindAll(x=>x.IsConnected==false).Count
+        IncorrectLostAnswersText.text = $" {16 - CorrectAnsers} / 16"; //objectHandlers.FindAll(x=>x.IsConnected==false).Count
+
         GameOverPanel.SetActive(true);
     }
     public async UniTask FinishGame()
@@ -223,6 +231,7 @@ public class GameManger : MonoBehaviour
         {
             if (StageNumber == 1)
             {
+           
                 Started = false;
                 boneManager.SkeletonImages.ForEach(x => x.color = new Color(1, 1, 1, 1));
                 ConnectedObjects = 0;
@@ -243,6 +252,7 @@ public class GameManger : MonoBehaviour
                 Started = false;
 
                 organManager.OrganImages.ForEach(x => x.color = new Color(1, 1, 1, 1));
+               
                 ConnectedObjects = 0;
                 LoadingScreen.gameObject.SetActive(true);
                 await UniTask.Delay(1000, ignoreTimeScale: false);
@@ -262,7 +272,8 @@ public class GameManger : MonoBehaviour
         {
             Started = false;
             muscleManager.OrganImages.ForEach(x => x.color = new Color(1, 1, 1, 1));
-                ConnectedObjects = 0;
+ 
+            ConnectedObjects = 0;
                 //LoadingScreen.gameObject.SetActive(true);
                 //await UniTask.Delay(1000, ignoreTimeScale: false);
                 //LoadingScreen.DOFade(1, 1f);
@@ -276,14 +287,20 @@ public class GameManger : MonoBehaviour
             PlayerData data = new PlayerData();
             data.name = playername;
             data.score = gametime;
+
+            data.correct = CorrectAnsers;
+            data.incorrect = 16-CorrectAnsers;
             PlayerScoress.Add(data);
-            PlayerScoress.Sort((p1, p2) => p1.score.CompareTo(p2.score));
+            PlayerScoress.Sort((p1, p2) => p1.score.CompareTo(p2.score).CompareTo(p1.correct));
 
             // PlayerScoress.Sort();
             string json = JsonConvert.SerializeObject(PlayerScoress);
             PlayerPrefs.SetString("ScoreJson", json);
-
             GameWinScore.transform.GetChild(0).GetComponent<TMP_Text>().text = playername.ToString();
+
+            correctWinAnswersText.text = $"{CorrectAnsers} / 16"; //objectHandlers.FindAll(x=>x.IsConnected==false).Count
+            IncorrectWinAnswersText.text = $" {16 - CorrectAnsers} / 16"; //objectHandlers.FindAll(x=>x.IsConnected==false).Count
+
             GameWinScore.transform.GetChild(1).GetComponent<TMP_Text>().text = gametime.ToString("0.0")+ " sec";
             GameWinPanel.gameObject.SetActive(true);
            // ShowLeaderBoard();
@@ -305,9 +322,13 @@ public class GameManger : MonoBehaviour
                 go.GetComponent<Image>().color = Color.white;
                 go.transform.GetChild(0).GetComponent<TMP_Text>().color = Color.gray;
                 go.transform.GetChild(1).GetComponent<TMP_Text>().color = Color.gray;
+                go.transform.GetChild(2).GetComponent<TMP_Text>().color = Color.gray;
+                go.transform.GetChild(3).GetComponent<TMP_Text>().color = Color.gray;
             }
             go.transform.GetChild(0).GetComponent<TMP_Text>().text = PlayerScoress[i].name.ToString();
-            go.transform.GetChild(1).GetComponent<TMP_Text>().text = PlayerScoress[i].score.ToString("0.0") + " sec";
+            go.transform.GetChild(1).GetComponent<TMP_Text>().text ="Correct : "+ PlayerScoress[i].correct.ToString();
+            go.transform.GetChild(2).GetComponent<TMP_Text>().text = "Incorrect : " + PlayerScoress[i].incorrect.ToString();
+            go.transform.GetChild(3).GetComponent<TMP_Text>().text = PlayerScoress[i].score.ToString("0.0") + " sec";
             InstantiatedScores.Add(go);
         }
         Leaderboard.SetActive(true);
