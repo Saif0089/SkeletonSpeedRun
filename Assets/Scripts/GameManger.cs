@@ -222,6 +222,7 @@ public class GameManger : MonoBehaviour
         IncorrectLostAnswersText.text = $" {16 - CorrectAnsers} / 16"; //objectHandlers.FindAll(x=>x.IsConnected==false).Count
 
         GameOverPanel.SetActive(true);
+        Invoke(nameof(RestartGame), 5);
     }
     public async UniTask FinishGame()
     {
@@ -293,7 +294,7 @@ public class GameManger : MonoBehaviour
             PlayerScoress.Add(data);
             PlayerScoress.Sort((p1, p2) => p1.score.CompareTo(p2.score).CompareTo(p1.correct));
 
-            // PlayerScoress.Sort();
+ 
             string json = JsonConvert.SerializeObject(PlayerScoress);
             PlayerPrefs.SetString("ScoreJson", json);
             GameWinScore.transform.GetChild(0).GetComponent<TMP_Text>().text = playername.ToString();
@@ -303,10 +304,14 @@ public class GameManger : MonoBehaviour
 
             GameWinScore.transform.GetChild(1).GetComponent<TMP_Text>().text = gametime.ToString("0.0")+ " sec";
             GameWinPanel.gameObject.SetActive(true);
-           // ShowLeaderBoard();
+
+            Invoke(nameof(RestartGame),5);
+            // ShowLeaderBoard();
         }
         
     }
+
+    
     List<GameObject> InstantiatedScores = new List<GameObject>();
     public void ShowLeaderBoard()
     {
