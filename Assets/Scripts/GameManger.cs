@@ -47,6 +47,7 @@ public class GameManger : MonoBehaviour
     public GameObject GameOverPanel;
     public GameObject GameWinPanel;
     public GameObject GameWinScore;
+    public GameObject submitButton;
 
     public GameObject TakeNamePanel;
     public GameObject InputnameError;
@@ -81,6 +82,48 @@ public class GameManger : MonoBehaviour
         }
     }
 
+    public void CheckCompletion()
+    {
+        GameManger.Instance.FinishGame();
+        //bool isfinished = false;
+
+        //if ((GameManger.Instance.ConnectedObjects >= GameManger.Instance.boneManager.Bones.Count) && GameManger.Instance.StageNumber == 1)
+        //{
+        //    isfinished = true;
+        //    GameManger.Instance.FinishGame();
+        //}
+        //else if (GameManger.Instance.ConnectedObjects >= GameManger.Instance.organManager.Organs.Count && GameManger.Instance.StageNumber == 2)
+        //{
+        //    isfinished = true;
+        //    GameManger.Instance.FinishGame();
+        //}
+        //else if (GameManger.Instance.ConnectedObjects >= GameManger.Instance.muscleManager.Muscles.Count && GameManger.Instance.StageNumber >= 3)
+        //{
+        //    isfinished = true;
+        //    GameManger.Instance.FinishGame();
+        //}
+
+
+        //if(isfinished==false)
+        //CheckAllin();
+    }
+    public void CheckAllin()
+    {
+        if ((GameManger.Instance.objectHandlers.Count >= GameManger.Instance.boneManager.Bones.Count) && GameManger.Instance.StageNumber == 1)
+        {
+            GameManger.Instance.FinishGame();
+        }
+        else if (GameManger.Instance.objectHandlers.Count >= (GameManger.Instance.boneManager.Bones.Count + GameManger.Instance.organManager.Organs.Count)
+            && GameManger.Instance.StageNumber == 2)
+        {
+            GameManger.Instance.FinishGame();
+        }
+        else if (GameManger.Instance.objectHandlers.Count >= (GameManger.Instance.boneManager.Bones.Count + GameManger.Instance.organManager.Organs.Count + GameManger.Instance.muscleManager.Muscles.Count) && GameManger.Instance.StageNumber >= 3)
+        {
+            GameManger.Instance.FinishGame();
+        }
+    }
+ 
     public void AddName()
     {
 
@@ -93,7 +136,8 @@ public class GameManger : MonoBehaviour
             TakeNamePanel.SetActive(false);
             StartGameText.SetActive(false);
             bonesSection.SetActive(true);
-         
+            submitButton.SetActive(true);
+            GameTimeText.gameObject.SetActive(true);
             nameAssigned = true;
             Started = true;
             StartGameButton.gameObject.SetActive(true);
@@ -129,7 +173,10 @@ public class GameManger : MonoBehaviour
         {
             TakeNamePanel.SetActive(false);
           //  StartGameText.SetActive(false);
+           
+            if(StageNumber==1)
             bonesSection.SetActive(true);
+         
             Leaderboard.SetActive(false);
             
             Started = true;
@@ -155,7 +202,7 @@ public class GameManger : MonoBehaviour
     public void StopGame()
     {
         Started = false;
-        
+        Debug.Log("stop game now");
         StartGameButtonText.text = "Start - أﺪﺒﻳ";
         StartGameButton.targetGraphic.color = new Color(0.07197545f, 0.8301887f, 0, 1);
         StartGameButton.onClick.RemoveAllListeners();
@@ -220,7 +267,7 @@ public class GameManger : MonoBehaviour
         StopGame();
         correctLostAnswersText.text =$"{CorrectAnsers} / 16"; //objectHandlers.FindAll(x=>x.IsConnected==false).Count
         IncorrectLostAnswersText.text = $" {16 - CorrectAnsers} / 16"; //objectHandlers.FindAll(x=>x.IsConnected==false).Count
-
+        submitButton.SetActive(false);
         GameOverPanel.SetActive(true);
         Invoke(nameof(RestartGame), 5);
     }
@@ -246,6 +293,7 @@ public class GameManger : MonoBehaviour
                 LoadingScreen.DOFade(0, 1f);
                 await UniTask.Delay(1000, ignoreTimeScale: false);
                 LoadingScreen.gameObject.SetActive(false);
+                GameTimeText.gameObject.SetActive(true);
                 Started = true;
             }
             if(StageNumber == 2)
@@ -264,6 +312,7 @@ public class GameManger : MonoBehaviour
                 LoadingScreen.DOFade(0, 1f);
                 await UniTask.Delay(1000, ignoreTimeScale: false);
                 LoadingScreen.gameObject.SetActive(false);
+                GameTimeText.gameObject.SetActive(true);
                 Started = true;
             }
             StageNumber += 1;
@@ -304,7 +353,7 @@ public class GameManger : MonoBehaviour
 
             GameWinScore.transform.GetChild(1).GetComponent<TMP_Text>().text = gametime.ToString("0.0")+ " sec";
             GameWinPanel.gameObject.SetActive(true);
-
+            submitButton.SetActive(false);
             Invoke(nameof(RestartGame),5);
             // ShowLeaderBoard();
         }
