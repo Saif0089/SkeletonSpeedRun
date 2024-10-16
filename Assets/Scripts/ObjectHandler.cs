@@ -171,21 +171,26 @@ public class ObjectHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
         GameManger.Instance.CorrectAnsers += 1;
 
+        bool wonset = false;
         // transform.parent = transform.parent.transform;
         if ((GameManger.Instance.ConnectedObjects == GameManger.Instance.boneManager.Bones.Count) && GameManger.Instance.StageNumber == 1)
         {
+            wonset = true;
             GameManger.Instance.FinishGame();
+           
         }
         else if (GameManger.Instance.ConnectedObjects == GameManger.Instance.organManager.Organs.Count && GameManger.Instance.StageNumber == 2)
         {
+            wonset = true;
             GameManger.Instance.FinishGame();
         }
         else if (GameManger.Instance.ConnectedObjects >= GameManger.Instance.muscleManager.Muscles.Count && GameManger.Instance.StageNumber >= 3)
         {
+            wonset = true;
             GameManger.Instance.FinishGame();
         }
 
-
+        if(wonset==false)
         CheckAllin();
     }
     // Optional: Reset the element back to its original position

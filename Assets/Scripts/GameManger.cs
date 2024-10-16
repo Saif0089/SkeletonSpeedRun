@@ -295,7 +295,7 @@ public class GameManger : MonoBehaviour
                 LoadingScreen.gameObject.SetActive(false);
                 GameTimeText.gameObject.SetActive(true);
                 Started = true;
-            }
+            } 
             if(StageNumber == 2)
             {
                 Started = false;
