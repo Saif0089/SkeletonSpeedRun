@@ -77,7 +77,7 @@ public class GameManger : MonoBehaviour
         if (!string.IsNullOrEmpty(PlayerPrefs.GetString("ScoreJson")))
         {
             PlayerScoress = JsonConvert.DeserializeObject<List<PlayerData>>(PlayerPrefs.GetString("ScoreJson"));
-            PlayerScoress.Sort((p1, p2) => p1.score.CompareTo(p2.score).CompareTo(p1.correct) );
+            PlayerScoress.Sort((p1, p2) => p1.score.CompareTo(p2.score) );
             // PlayerScoress.Sort();
         }
     }
@@ -341,7 +341,7 @@ public class GameManger : MonoBehaviour
             data.correct = CorrectAnsers;
             data.incorrect = 16-CorrectAnsers;
             PlayerScoress.Add(data);
-            PlayerScoress.Sort((p1, p2) => p1.score.CompareTo(p2.score).CompareTo(p1.correct));
+            PlayerScoress.Sort((p1, p2) => p1.score.CompareTo(p2.score));
 
  
             string json = JsonConvert.SerializeObject(PlayerScoress);
