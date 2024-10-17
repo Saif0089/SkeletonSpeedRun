@@ -7,6 +7,12 @@
       "dependencies": {},
       "hash": "27a0c06ede7bf6507bef454dcdd425a6a292c182"
     },
+    "com.nfynt.wvp": {
+      "version": "file:com.nfynt.wvp",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.unity.collab-proxy": {
       "version": "2.5.1",
       "depth": 0,

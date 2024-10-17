@@ -28,6 +28,8 @@ public class GameManger : MonoBehaviour
     public static GameManger Instance;
     public bool Started;
     public int ConnectedObjects;
+
+    public GameObject normalBG;
     public BoneManager boneManager;
     public OrganManager organManager;
     public MuscleManager muscleManager;
@@ -59,6 +61,7 @@ public class GameManger : MonoBehaviour
     bool canplaydemo = true;
     string playername;
     bool nameAssigned=false;
+    public GameObject leaderboardBTN;
     public TextMeshProUGUI correctLostAnswersText;
     public TextMeshProUGUI IncorrectLostAnswersText;
     public TextMeshProUGUI correctWinAnswersText;
@@ -132,7 +135,7 @@ public class GameManger : MonoBehaviour
         if (playername.Length > 0 && playername != string.Empty)
         {
 
-
+            normalBG.SetActive(true);
             TakeNamePanel.SetActive(false);
             StartGameText.SetActive(false);
             bonesSection.SetActive(true);
@@ -157,7 +160,7 @@ public class GameManger : MonoBehaviour
         StopGame();
 
         TakeNamePanel.SetActive(false);
-     //   StartGameText.SetActive(true);
+        StartGameText.SetActive(true);
         bonesSection.SetActive(false);
         Leaderboard.SetActive(false);
         StartGameButton.gameObject.SetActive(true);
@@ -197,6 +200,7 @@ public class GameManger : MonoBehaviour
             Started = false;
             canplaydemo = false;
         }
+        StartGameText.SetActive(false);
 
     }
     public void StopGame()
@@ -262,15 +266,36 @@ public class GameManger : MonoBehaviour
             
         }
     }
-    public void GameOver()
+    public async UniTask GameOver()
     {
         StopGame();
+   
         correctLostAnswersText.text =$"{CorrectAnsers} / 16"; //objectHandlers.FindAll(x=>x.IsConnected==false).Count
         IncorrectLostAnswersText.text = $" {16 - CorrectAnsers} / 16"; //objectHandlers.FindAll(x=>x.IsConnected==false).Count
         submitButton.SetActive(false);
+
+        StartGameButton.gameObject.SetActive(false);
+        LoadingScreen.gameObject.SetActive(true);
+        await UniTask.Delay(1000, ignoreTimeScale: false);
+        LoadingScreen.DOFade(1, 1f);
+        await UniTask.Delay(2000, ignoreTimeScale: false);
+        organSection.SetActive(false);
+        muscleSection.SetActive(false);
+        bonesSection.SetActive(false);
+        normalBG.SetActive(false);
+        GameTimeText.gameObject.SetActive(false);
         GameOverPanel.SetActive(true);
-        Invoke(nameof(RestartGame), 5);
+        LoadingScreen.DOFade(0, 1f);
+      //  leaderboardBTN.SetActive(false);
+        await UniTask.Delay(1000, ignoreTimeScale: false);
+        LoadingScreen.gameObject.SetActive(false);
+
+
+
+        Invoke(nameof(RestartGame), 10);
     }
+
+    
     public async UniTask FinishGame()
     {
         Debug.Log("GameFinish");
@@ -324,15 +349,20 @@ public class GameManger : MonoBehaviour
             muscleManager.OrganImages.ForEach(x => x.color = new Color(1, 1, 1, 1));
  
             ConnectedObjects = 0;
-                //LoadingScreen.gameObject.SetActive(true);
-                //await UniTask.Delay(1000, ignoreTimeScale: false);
-                //LoadingScreen.DOFade(1, 1f);
-                //await UniTask.Delay(2000, ignoreTimeScale: false);
-                //organSection.SetActive(false);
-                //muscleSection.SetActive(false);
-                //LoadingScreen.DOFade(0, 1f);
-                //await UniTask.Delay(1000, ignoreTimeScale: false);
-                LoadingScreen.gameObject.SetActive(false);
+            StartGameButton.gameObject.SetActive(false);
+            LoadingScreen.gameObject.SetActive(true);
+            await UniTask.Delay(1000, ignoreTimeScale: false);
+            LoadingScreen.DOFade(1, 1f);
+            await UniTask.Delay(2000, ignoreTimeScale: false);
+            organSection.SetActive(false);
+                muscleSection.SetActive(false);
+                bonesSection.SetActive(false);
+            normalBG.SetActive(false);
+            GameTimeText.gameObject.SetActive(false);
+            submitButton.SetActive(false);
+            LoadingScreen.DOFade(0, 1f);
+            await UniTask.Delay(1000, ignoreTimeScale: false);
+            LoadingScreen.gameObject.SetActive(false);
           
             PlayerData data = new PlayerData();
             data.name = playername;
@@ -353,7 +383,7 @@ public class GameManger : MonoBehaviour
 
             GameWinScore.transform.GetChild(1).GetComponent<TMP_Text>().text = gametime.ToString("0.0")+ " sec";
             GameWinPanel.gameObject.SetActive(true);
-            submitButton.SetActive(false);
+           
             Invoke(nameof(RestartGame),10);
             // ShowLeaderBoard();
         }
