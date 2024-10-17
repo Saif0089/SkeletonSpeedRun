@@ -354,7 +354,7 @@ public class GameManger : MonoBehaviour
             GameWinScore.transform.GetChild(1).GetComponent<TMP_Text>().text = gametime.ToString("0.0")+ " sec";
             GameWinPanel.gameObject.SetActive(true);
             submitButton.SetActive(false);
-            Invoke(nameof(RestartGame),5);
+            Invoke(nameof(RestartGame),10);
             // ShowLeaderBoard();
         }
         
